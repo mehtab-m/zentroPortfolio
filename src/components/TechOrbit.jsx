@@ -4,6 +4,17 @@ import BrandLogo from './BrandLogo'
 import { orbitLogos } from '../data/partners'
 import './TechOrbit.css'
 
+/** Orbit radius as % of stage width (stage is square) */
+const ORBIT_RADIUS_PCT = 42
+
+function getOrbitPosition(angleDeg) {
+  const rad = (angleDeg * Math.PI) / 180
+  return {
+    left: 50 + ORBIT_RADIUS_PCT * Math.sin(rad),
+    top: 50 - ORBIT_RADIUS_PCT * Math.cos(rad),
+  }
+}
+
 export default function TechOrbit() {
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] })
@@ -42,43 +53,45 @@ export default function TechOrbit() {
 
         <motion.div className="tech-orbit-stage" style={{ scale }}>
           <motion.div className="tech-orbit-spinner" style={{ rotate }}>
-            {orbitLogos.map(({ slug, name, angle }) => (
-              <motion.div
-                key={slug}
-                className="tech-orbit-node"
-                style={{ '--angle': `${angle}deg` }}
-                initial={{ opacity: 0, scale: 0 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: angle / 360 * 0.4, type: 'spring', stiffness: 200, damping: 18 }}
-              >
-                <motion.div
-                  className="tech-orbit-node-inner"
-                  style={{ rotate: counterRotate }}
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{
-                    duration: 4 + (angle % 3),
-                    repeat: Infinity,
-                    ease: 'easeInOut',
-                    delay: angle / 360 * 2,
-                  }}
-                  whileHover={{ scale: 1.15 }}
-                >
-                  <BrandLogo slug={slug} name={name} size={52} pill />
-                </motion.div>
-              </motion.div>
-            ))}
-          </motion.div>
+            {orbitLogos.map(({ slug, name, angle }, index) => {
+              const { left, top } = getOrbitPosition(angle)
 
-          <motion.div
-            className="tech-orbit-center"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3, type: 'spring', stiffness: 200, damping: 20 }}
-          >
-            <span className="logo-mark">Z</span>
-            <span>Hub</span>
+              return (
+                <div
+                  key={slug}
+                  className="tech-orbit-node"
+                  style={{
+                    left: `${left}%`,
+                    top: `${top}%`,
+                    '--float-delay': `${index * 0.4}s`,
+                    zIndex: index + 1,
+                  }}
+                >
+                  <motion.div
+                    className="tech-orbit-node-counter"
+                    style={{ rotate: counterRotate }}
+                  >
+                    <motion.div
+                      className="tech-orbit-node-inner"
+                      initial={{ opacity: 0, scale: 0 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        delay: index * 0.1,
+                        type: 'spring',
+                        stiffness: 200,
+                        damping: 18,
+                      }}
+                      whileHover={{ scale: 1.12 }}
+                    >
+                      <div className="tech-orbit-node-float">
+                        <BrandLogo slug={slug} name={name} size={52} pill />
+                      </div>
+                    </motion.div>
+                  </motion.div>
+                </div>
+              )
+            })}
           </motion.div>
         </motion.div>
       </div>
