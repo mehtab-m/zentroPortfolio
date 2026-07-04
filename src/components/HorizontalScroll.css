@@ -1,0 +1,187 @@
+.horizontal-scroll-section {
+  height: 320vh;
+  position: relative;
+}
+
+.horizontal-scroll-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.horizontal-scroll-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, #eff6fc 0%, #ffffff 40%, #f0faf8 100%);
+  z-index: 0;
+}
+
+.horizontal-scroll-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(0, 120, 212, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(80, 227, 194, 0.05) 0%, transparent 50%);
+}
+
+.horizontal-scroll-header {
+  margin-bottom: 48px;
+  position: relative;
+  z-index: 1;
+}
+
+.horizontal-scroll-header h2 {
+  font-size: clamp(28px, 3.5vw, 48px);
+  max-width: 680px;
+  letter-spacing: -0.025em;
+}
+
+.horizontal-scroll-progress {
+  margin-top: 24px;
+  height: 3px;
+  max-width: 200px;
+  background: var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.horizontal-scroll-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), #50e3c2);
+  border-radius: inherit;
+}
+
+.horizontal-scroll-track-wrap {
+  overflow: visible;
+  padding-left: max(32px, calc((100vw - var(--max-width)) / 2 + 32px));
+  position: relative;
+  z-index: 1;
+}
+
+.horizontal-scroll-track {
+  display: flex;
+  gap: 28px;
+  width: max-content;
+  padding-right: 120px;
+  will-change: transform;
+}
+
+.horizontal-scroll-card {
+  flex: 0 0 min(400px, 88vw);
+  padding: 40px 36px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 24px;
+  box-shadow:
+    0 8px 40px rgba(0, 120, 212, 0.1),
+    0 2px 8px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.horizontal-scroll-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), #50e3c2);
+}
+
+.horizontal-scroll-logo {
+  margin-bottom: 8px;
+}
+
+.horizontal-scroll-logo .brand-logo-pill {
+  padding: 8px 16px;
+}
+
+.horizontal-scroll-logo .brand-logo-pill img {
+  height: var(--logo-height, 40px);
+}
+
+.horizontal-scroll-card strong {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.horizontal-scroll-card h3 {
+  font-size: 20px;
+  color: var(--text-h);
+}
+
+.horizontal-scroll-card p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+@media (max-width: 768px) {
+  .horizontal-scroll-section {
+    height: auto;
+  }
+
+  .horizontal-scroll-sticky {
+    position: relative;
+    height: auto;
+    padding: 56px 0;
+  }
+
+  .horizontal-scroll-track-wrap {
+    padding-left: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .horizontal-scroll-track-wrap::-webkit-scrollbar {
+    display: none;
+  }
+
+  .horizontal-scroll-track {
+    transform: none !important;
+    padding-right: 20px;
+  }
+
+  .horizontal-scroll-card {
+    scroll-snap-align: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .horizontal-scroll-section {
+    height: auto;
+  }
+
+  .horizontal-scroll-sticky {
+    position: relative;
+    height: auto;
+    padding: 56px 0;
+  }
+
+  .horizontal-scroll-track {
+    flex-wrap: wrap;
+    width: 100%;
+    transform: none !important;
+    padding: 0 20px;
+  }
+
+  .horizontal-scroll-card {
+    flex: 1 1 100%;
+  }
+}

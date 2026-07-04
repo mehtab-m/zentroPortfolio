@@ -1,0 +1,13 @@
+.hero-scroll-layer {
+  position: relative;
+}
+
+.hero-scroll-content {
+  will-change: transform, opacity, filter;
+}
+
+.hero-scroll-content .hero-grid,
+.hero-scroll-content .hero-scroll-hint {
+  position: relative;
+  z-index: 2;
+}

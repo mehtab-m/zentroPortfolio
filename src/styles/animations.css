@@ -1,0 +1,352 @@
+/* ── Motion tokens ──────────────────────────────────── */
+:root {
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 0.2s;
+  --duration: 0.55s;
+  --duration-slow: 0.85s;
+}
+
+/* ── Page transitions (fallback; Framer Motion handles primary) ── */
+.page-transition {
+  flex: 1;
+  width: 100%;
+}
+
+/* Legacy reveal classes — Framer Motion Reveal handles animation now */
+.reveal.is-visible .skill-fill {
+  width: var(--skill-width);
+}
+
+/* ── Hero load sequence ─────────────────────────────── */
+.hero-load {
+  opacity: 0;
+  animation: heroFadeUp var(--duration-slow) var(--ease-out) forwards;
+}
+
+.hero-load-1 { animation-delay: 0.05s; }
+.hero-load-2 { animation-delay: 0.15s; }
+.hero-load-3 { animation-delay: 0.25s; }
+.hero-load-4 { animation-delay: 0.35s; }
+.hero-load-5 { animation-delay: 0.45s; }
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Hero background ────────────────────────────────── */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.45;
+  animation: orbDrift 18s ease-in-out infinite alternate;
+}
+
+.hero-orb-1 {
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(0, 120, 212, 0.18) 0%, transparent 70%);
+  top: -120px;
+  right: -80px;
+}
+
+.hero-orb-2 {
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(80, 160, 232, 0.14) 0%, transparent 70%);
+  bottom: -60px;
+  left: -40px;
+  animation-delay: -6s;
+  animation-duration: 22s;
+}
+
+.hero-grid-pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 120, 212, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 120, 212, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 20%, transparent 100%);
+}
+
+.hero-noise {
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@keyframes orbDrift {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(24px, -18px) scale(1.06); }
+}
+
+.hero-grid,
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Hero panel motion ──────────────────────────────── */
+.hero-panel-wrap .hero-panel {
+  animation: none;
+}
+
+.chart-bar {
+  transform-origin: bottom;
+}
+
+.panel-dot.active {
+  animation: dotPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 120, 212, 0.4); }
+  50% { box-shadow: 0 0 0 6px rgba(0, 120, 212, 0); }
+}
+
+.chart-bar {
+  transform-origin: bottom;
+  animation: none;
+}
+
+/* ── Trust bar marquee ──────────────────────────────── */
+.trust-marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+}
+
+.trust-marquee-track {
+  display: flex;
+  gap: 48px;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.trust-marquee:hover .trust-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ── Card interactions ──────────────────────────────── */
+.card {
+  transition:
+    transform var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card-lift:hover .icon-wrap {
+  transform: scale(1.08);
+  background: var(--primary-light);
+}
+
+.icon-wrap {
+  transition: transform var(--duration-fast) var(--ease-out), background var(--duration-fast);
+}
+
+.card-link .icon {
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.card-link:hover .icon {
+  transform: translateX(4px);
+}
+
+/* ── Buttons ────────────────────────────────────────── */
+.btn {
+  position: relative;
+  overflow: hidden;
+  transition:
+    background var(--duration-fast),
+    border-color var(--duration-fast),
+    color var(--duration-fast),
+    transform var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 120, 212, 0.28);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-outline:hover {
+  transform: translateY(-1px);
+}
+
+/* ── Navbar scroll state ────────────────────────────── */
+.navbar-main.is-scrolled {
+  box-shadow: var(--shadow-md);
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 4px;
+  height: 2px;
+  background: var(--primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+/* ── Capability row hover ───────────────────────────── */
+.capability-item {
+  transition: background var(--duration-fast), padding-left var(--duration-fast) var(--ease-out);
+}
+
+.capability-item:hover {
+  padding-left: 40px;
+}
+
+.capability-item:hover .icon-wrap {
+  transform: scale(1.06);
+}
+
+/* ── CTA band shimmer ───────────────────────────────── */
+.cta-band {
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-band::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.06) 50%,
+    transparent 60%
+  );
+  transform: translateX(-100%);
+  animation: ctaShimmer 8s ease-in-out infinite;
+}
+
+@keyframes ctaShimmer {
+  0%, 70%, 100% { transform: translateX(-100%); }
+  85% { transform: translateX(100%); }
+}
+
+/* ── Testimonial avatar ─────────────────────────────── */
+.testimonial-avatar {
+  transition: transform var(--duration-fast) var(--ease-spring), box-shadow var(--duration-fast) var(--ease-spring);
+}
+
+/* ── Filter tabs ────────────────────────────────────── */
+.filter-tab {
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.filter-tab.active {
+  transform: scale(1.02);
+}
+
+/* ── Skill bars animate on reveal ─────────────────── */
+.reveal.is-visible .skill-fill {
+  width: var(--skill-width);
+}
+
+.reveal.is-visible .step-number {
+  animation: stepPop 0.55s var(--ease-spring) both;
+}
+
+@keyframes stepPop {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ── Form focus glow ────────────────────────────────── */
+.form-group input:focus,
+.form-group textarea:focus {
+  animation: inputGlow 0.3s var(--ease-out);
+}
+
+@keyframes inputGlow {
+  from { box-shadow: 0 0 0 0 var(--primary-light); }
+  to { box-shadow: 0 0 0 2px var(--primary-light); }
+}
+
+/* ── Reduced motion ─────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero-load,
+  .hero-panel,
+  .chart-bar,
+  .panel-tags span,
+  .trust-marquee-track {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .page-transition {
+    animation: none;
+  }
+}

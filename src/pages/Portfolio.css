@@ -1,0 +1,150 @@
+.filter-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.filter-tab {
+  position: relative;
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+  font-family: inherit;
+  overflow: hidden;
+}
+
+.filter-tab-label {
+  position: relative;
+  z-index: 1;
+}
+
+.filter-tab-bg {
+  position: absolute;
+  inset: 0;
+  background: var(--primary);
+  border-radius: inherit;
+  z-index: 0;
+}
+
+.filter-tab:hover {
+  border-color: var(--border-strong);
+  color: var(--text-h);
+}
+
+.filter-tab.active {
+  border-color: var(--primary);
+  color: var(--text-inverse);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.projects-grid .reveal {
+  height: 100%;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+}
+
+.project-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  padding: 3px 10px;
+  border-radius: var(--radius-sm);
+  background: var(--primary-subtle);
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.project-card h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-h);
+  line-height: 1.35;
+}
+
+.project-desc {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.65;
+}
+
+.project-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  padding-top: 8px;
+}
+
+.project-cols h3 {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin: 0 0 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.project-cols ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.project-cols ul li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.project-cols ul li .icon {
+  color: var(--primary);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.results-list li .icon {
+  color: var(--success);
+}
+
+.project-cta {
+  align-self: flex-start;
+  margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-cols {
+    grid-template-columns: 1fr;
+  }
+}

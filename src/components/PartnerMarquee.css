@@ -1,0 +1,47 @@
+.partner-marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+  flex: 1;
+}
+
+.partner-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: max-content;
+  animation: partnerMarquee 35s linear infinite;
+  padding: 4px 0;
+}
+
+.partner-marquee:hover .partner-marquee-track {
+  animation-play-state: paused;
+}
+
+.partner-marquee-item {
+  flex-shrink: 0;
+}
+
+.partner-marquee-item .brand-logo-pill {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.partner-marquee-item:hover .brand-logo-pill {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow:
+    0 12px 40px rgba(0, 120, 212, 0.18),
+    0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+@keyframes partnerMarquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-100% / 3)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .partner-marquee-track {
+    animation: none;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+  }
+}

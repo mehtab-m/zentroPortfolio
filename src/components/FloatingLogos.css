@@ -1,0 +1,46 @@
+.floating-logos {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.floating-logo-item {
+  position: absolute;
+  pointer-events: auto;
+}
+
+.floating-logo-inner {
+  will-change: transform;
+}
+
+.floating-logo-inner .brand-logo-pill {
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow:
+    0 8px 32px rgba(0, 120, 212, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 1024px) {
+  .floating-logos {
+    opacity: 0.55;
+  }
+
+  .floating-logo-item:nth-child(n+4) {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .floating-logos {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-logo-inner {
+    animation: none !important;
+  }
+}
