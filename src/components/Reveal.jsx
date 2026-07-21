@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { directionMap, springSoft, viewportOnce } from '../lib/motion'
+import { directionMap, springSoft } from '../lib/motion'
 
 export default function Reveal({
   children,
@@ -17,7 +17,9 @@ export default function Reveal({
       className={className || undefined}
       initial="hidden"
       whileInView="visible"
-      viewport={{ ...viewportOnce, once }}
+      // amount: 0 means trigger as soon as ANY pixel is visible
+      // margin: positive so it fires slightly before entering viewport
+      viewport={{ once, amount: 0, margin: '0px 0px 40px 0px' }}
       variants={{
         hidden: variants.hidden,
         visible: {
