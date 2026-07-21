@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence, LayoutGroup } from 'framer-motion'
 import { Icon } from '../components/Icons'
-import Reveal from '../components/Reveal'
 import TextReveal from '../components/TextReveal'
 import { staggerContainer, staggerItem } from '../lib/motion'
 import './Portfolio.css'
@@ -173,30 +172,28 @@ export default function Portfolio() {
 
       <section className="section">
         <div className="container">
-          <Reveal delay={80}>
-            <LayoutGroup>
-              <div className="filter-tabs" role="tablist" aria-label="Filter case studies by category">
-                {categories.map(cat => (
-                  <button
-                    key={cat}
-                    role="tab"
-                    aria-selected={active === cat}
-                    className={`filter-tab ${active === cat ? 'active' : ''}`}
-                    onClick={() => setActive(cat)}
-                  >
-                    {active === cat && (
-                      <motion.span
-                        className="filter-tab-bg"
-                        layoutId="filterActive"
-                        transition={{ type: 'spring', stiffness: 400, damping: 30 }}
-                      />
-                    )}
-                    <span className="filter-tab-label">{cat}</span>
-                  </button>
-                ))}
-              </div>
-            </LayoutGroup>
-          </Reveal>
+          <LayoutGroup>
+            <div className="filter-tabs" role="tablist" aria-label="Filter case studies by category">
+              {categories.map(cat => (
+                <button
+                  key={cat}
+                  role="tab"
+                  aria-selected={active === cat}
+                  className={`filter-tab ${active === cat ? 'active' : ''}`}
+                  onClick={() => setActive(cat)}
+                >
+                  {active === cat && (
+                    <motion.span
+                      className="filter-tab-bg"
+                      layoutId="filterActive"
+                      transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                    />
+                  )}
+                  <span className="filter-tab-label">{cat}</span>
+                </button>
+              ))}
+            </div>
+          </LayoutGroup>
 
           <motion.div
             className="projects-grid"
@@ -211,10 +208,7 @@ export default function Portfolio() {
                   key={title}
                   layout
                   variants={staggerItem}
-                  initial={{ opacity: 0, scale: 0.92 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.92 }}
-                  transition={{ delay: i * 0.05 }}
+                  exit={{ opacity: 0, scale: 0.94, transition: { duration: 0.2 } }}
                 >
                   <motion.article
                     className="project-card"

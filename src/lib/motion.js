@@ -54,35 +54,32 @@ export const directionMap = {
 }
 
 export const staggerContainer = {
-  hidden: { opacity: 0 },
+  hidden: {},
   visible: {
-    opacity: 1,
     transition: { staggerChildren: 0.08, delayChildren: 0.05 },
   },
 }
 
 export const staggerItem = {
-  hidden: { opacity: 0, y: 32 },
+  hidden: { opacity: 0, y: 24 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease },
+    transition: { duration: 0.5, ease },
   },
 }
 
 export const pageVariants = {
-  initial: { opacity: 0, y: 16, filter: 'blur(6px)' },
+  initial: { opacity: 0, y: 10 },
   animate: {
     opacity: 1,
     y: 0,
-    filter: 'blur(0px)',
-    transition: { duration: 0.5, ease },
+    transition: { duration: 0.35, ease },
   },
   exit: {
     opacity: 0,
-    y: -12,
-    filter: 'blur(4px)',
-    transition: { duration: 0.35, ease },
+    y: -8,
+    transition: { duration: 0.25, ease },
   },
 }
 
@@ -113,4 +110,4 @@ export const cardHover = {
   },
 }
 
-export const viewportOnce = { once: true, amount: 0.2, margin: '0px 0px -60px 0px' }
+export const viewportOnce = { once: true, amount: 0.1, margin: '0px 0px 0px 0px' }
