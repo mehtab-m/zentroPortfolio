@@ -521,12 +521,89 @@ a:hover {
   background: rgba(255, 255, 255, 0.4);
 }
 
+/* ── Mobile responsive improvements ─────────────────── */
 @media (max-width: 768px) {
   .container {
-    padding: 0 20px;
+    padding: 0 16px;
   }
 
   .section {
-    padding: 56px 0;
+    padding: 48px 0;
+  }
+
+  .section-header {
+    margin-bottom: 32px;
+  }
+
+  .section-header h2 {
+    font-size: clamp(22px, 6vw, 32px);
+  }
+
+  .section-header p {
+    font-size: 15px;
+  }
+
+  .page-hero {
+    padding: 40px 0 32px;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(26px, 7vw, 38px);
+  }
+
+  .page-hero p {
+    font-size: 15px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .cta-band {
+    padding: 48px 0;
+  }
+
+  .cta-band h2 {
+    font-size: clamp(20px, 5vw, 28px);
+  }
+
+  .cta-band p {
+    font-size: 15px;
+  }
+
+  .trust-bar-inner {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 14px;
+  }
+
+  .btn-lg {
+    padding: 11px 20px;
+    font-size: 14px;
+  }
+
+  .cta-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cta-actions .btn,
+  .cta-actions .magnetic-wrap {
+    width: 100%;
+  }
+
+  .cta-actions .magnetic-wrap .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cta-trust-row {
+    font-size: 13px;
+    gap: 12px;
   }
 }

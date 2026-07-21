@@ -17,10 +17,10 @@ const skills = [
 ]
 
 const values = [
-  { icon: 'chart', title: 'Proven Track Record', desc: '500+ enterprise deployments across healthcare, finance, e-commerce, and SaaS verticals worldwide.' },
-  { icon: 'users', title: 'Dedicated Teams', desc: 'Cross-functional specialists assigned to every engagement — from solution architects to deployment engineers.' },
-  { icon: 'globe', title: 'Global Reach', desc: 'Multi-region cloud infrastructure serving organizations in 40+ countries with 99.9% uptime SLA.' },
-  { icon: 'shield', title: 'Enterprise Standards', desc: 'Security-first development with SOC 2-aligned practices, encrypted pipelines, and audit-ready documentation.' },
+  { icon: 'chart', title: 'Proven Results, Not Promises', desc: '120+ projects shipped across healthcare, legal, SaaS, e-commerce, and logistics — each with documented outcomes tied to real business metrics.' },
+  { icon: 'users', title: 'Small Team, Senior Execution', desc: 'No juniors, no outsourcing. You work directly with the specialists building your system — not account managers passing notes.' },
+  { icon: 'globe', title: 'Built to Scale With You', desc: 'Architecture decisions made on day one account for where you are going, not just where you are. Systems built to grow without rebuilding.' },
+  { icon: 'shield', title: 'Security & Compliance First', desc: 'HIPAA-aligned workflows, encrypted data pipelines, and audit-ready documentation — shipped as a standard, not an add-on.' },
 ]
 
 export default function About() {
@@ -36,15 +36,16 @@ export default function About() {
             About Zentro
           </motion.span>
           <h1>
-            <TextReveal text="Technology Partner for Global Organizations" as="span" />
+            <TextReveal text="The Startup's Technical Co-Pilot" as="span" />
           </h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
           >
-            Zentro is a specialized technology firm delivering enterprise automation,
-            cloud integrations, and intelligent digital solutions to organizations worldwide.
+            Zentro is a specialist technology studio that helps startups and
+            scale-ups build the automations, integrations, and AI systems that
+            let them move faster with leaner teams.
           </motion.p>
         </div>
       </section>
@@ -52,26 +53,27 @@ export default function About() {
       <section className="section">
         <div className="container about-intro">
           <Reveal direction="left" className="about-text">
-            <h2>Our Mission</h2>
+            <h2>Our Story</h2>
             <p>
-              We empower organizations to operate at peak efficiency through intelligent
-              automation, seamless cloud integrations, and AI-powered systems. Our team
-              combines deep technical expertise with a business-first mindset to deliver
-              solutions that drive measurable outcomes.
+              Zentro started from a simple observation: most growing companies are
+              drowning in manual work that software should already be handling. Missed
+              follow-ups, disconnected tools, repeat data entry, and hours lost to tasks
+              that should run automatically.
             </p>
             <p>
-              From Fortune 500 enterprises to high-growth startups, our clients trust
-              Zentro to modernize their technology infrastructure — reducing operational
-              costs, improving customer engagement, and enabling scalable growth.
+              We're a lean team of builders — developers, automation architects, and
+              AI specialists — who partner directly with startups and scale-ups to
+              replace that friction with systems that actually work. No large agency
+              overhead. No juniors. Just senior people who care about outcomes.
             </p>
             <p>
-              With expertise spanning Twilio communication platforms, Zapier automation
-              ecosystems, AI agent deployment, and full-stack application development,
-              we serve as a single accountable partner from strategy through ongoing optimization.
+              From HIPAA-compliant patient communication to AI lead qualification engines
+              and Stripe-powered funnels generating millions — our work shows up in the
+              metrics, not just the deliverables.
             </p>
             <MagneticButton>
               <Link to="/contact" className="btn btn-primary" style={{ marginTop: '8px', display: 'inline-flex' }}>
-                Partner With Us
+                Work With Us
               </Link>
             </MagneticButton>
           </Reveal>

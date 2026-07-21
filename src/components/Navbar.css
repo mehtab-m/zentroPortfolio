@@ -29,11 +29,15 @@
 .navbar-tagline {
   color: var(--text-muted);
   font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .navbar-top-links {
   display: flex;
   gap: 20px;
+  flex-shrink: 0;
 }
 
 .navbar-top-links a {
@@ -85,6 +89,7 @@
   font-size: 16px;
   font-weight: 700;
   border-radius: var(--radius);
+  flex-shrink: 0;
 }
 
 .logo-text {
@@ -98,6 +103,8 @@
   display: flex;
   align-items: center;
   gap: 2px;
+  flex: 1;
+  justify-content: flex-end;
 }
 
 .nav-link {
@@ -108,6 +115,7 @@
   color: var(--text);
   text-decoration: none;
   transition: color 0.15s, background 0.15s;
+  white-space: nowrap;
 }
 
 .nav-link:hover {
@@ -123,8 +131,123 @@
 
 .nav-cta {
   margin-left: 12px;
+  flex-shrink: 0;
 }
 
+/* ── Navbar right controls (desktop: only hamburger; shows theme only on desktop) */
+.navbar-right-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Desktop: hide the ThemeDropdown inside navbar-right-controls behind hamburger */
+.navbar-right-controls .theme-dropdown {
+  display: flex;
+}
+
+/* Desktop: hide the theme wrap inside the mobile nav */
+.nav-theme-wrap {
+  display: none;
+}
+
+/* ── Theme dropdown ───────────────────────────────── */
+.theme-dropdown {
+  position: relative;
+}
+
+.theme-trigger {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, color 0.15s;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.theme-trigger:hover {
+  border-color: var(--primary);
+  color: var(--text-h);
+  background: var(--surface-alt);
+}
+
+.theme-swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.theme-trigger-label {
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.theme-chevron {
+  color: var(--text-muted);
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.theme-chevron.open {
+  transform: rotate(180deg);
+}
+
+.theme-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 180px;
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  list-style: none;
+  padding: 6px;
+  margin: 0;
+  z-index: 200;
+  transform-origin: top right;
+}
+
+.theme-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+}
+
+.theme-option:hover {
+  background: var(--surface-alt);
+  color: var(--text-h);
+}
+
+.theme-option.active {
+  color: var(--primary);
+  background: var(--primary-subtle);
+}
+
+.theme-check {
+  margin-left: auto;
+  color: var(--primary);
+}
+
+/* ── Hamburger ──────────────────────────────────────── */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -136,6 +259,7 @@
   padding: 4px;
   width: 36px;
   height: 36px;
+  flex-shrink: 0;
 }
 
 .hamburger span {
@@ -151,17 +275,36 @@
 .hamburger.open span:nth-child(2) { opacity: 0; }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+/* ── Mobile ─────────────────────────────────────────── */
 @media (max-width: 900px) {
   .navbar-top {
     display: none;
   }
 
-  .nav-link::after {
+  .hamburger {
+    display: flex;
+  }
+
+  /* On mobile, hide the desktop ThemeDropdown in navbar-right-controls */
+  .navbar-right-controls .theme-dropdown {
     display: none;
   }
 
-  .hamburger {
+  /* Show nav-theme-wrap inside the open mobile menu */
+  .nav-theme-wrap {
     display: flex;
+    padding: 4px 0 8px;
+  }
+
+  .nav-theme-wrap .theme-trigger {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .nav-theme-wrap .theme-menu {
+    right: auto;
+    left: 0;
+    min-width: 100%;
   }
 
   .navbar-links {
@@ -177,6 +320,9 @@
     padding: 16px 20px 24px;
     gap: 4px;
     box-shadow: var(--shadow-md);
+    z-index: 99;
+    max-height: calc(100svh - var(--nav-height));
+    overflow-y: auto;
   }
 
   .navbar-links.open {
@@ -192,9 +338,20 @@
     margin-left: 0;
     margin-top: 8px;
     text-align: center;
+    justify-content: center;
   }
 
   .navbar-main {
     position: relative;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-text {
+    font-size: 18px;
+  }
+
+  .navbar-inner {
+    gap: 12px;
   }
 }

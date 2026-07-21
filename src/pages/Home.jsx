@@ -18,10 +18,10 @@ import { heroStagger, heroItem, staggerContainer, staggerItem, cardHover } from 
 import './Home.css'
 
 const stats = [
-  { value: '500+', label: 'Enterprise Deployments', icon: 'building' },
-  { value: '10M+', label: 'Automated Transactions / Month', icon: 'automation' },
+  { value: '120+', label: 'Projects Delivered', icon: 'building' },
+  { value: '4M+', label: 'Automated Tasks / Month', icon: 'automation' },
   { value: '99.9%', label: 'Platform Uptime SLA', icon: 'shield' },
-  { value: '40+', label: 'Countries Served', icon: 'globe' },
+  { value: '18+', label: 'Countries Served', icon: 'globe' },
 ]
 
 const solutions = [
@@ -54,84 +54,84 @@ const solutions = [
 const capabilities = [
   {
     icon: 'chart',
-    title: 'Measurable Business Outcomes',
-    desc: 'Every engagement is tied to KPIs — reduced operational costs, increased conversion, and improved customer satisfaction.',
+    title: 'Outcomes Tied to Real Metrics',
+    desc: 'We scope every project around specific KPIs — hours saved, leads qualified, revenue generated. If it can\'t be measured, we question whether it should be built.',
   },
   {
     icon: 'shield',
-    title: 'Enterprise Security & Compliance',
-    desc: 'SOC 2-aligned practices, encrypted data pipelines, and audit-ready documentation for regulated industries.',
+    title: 'Security Built In, Not Bolted On',
+    desc: 'HIPAA-aligned flows, encrypted pipelines, and role-based access are part of every engagement — not an upsell. Regulated industries welcome.',
   },
   {
     icon: 'globe',
-    title: 'Global Scale Architecture',
-    desc: 'Cloud-native solutions designed for multi-region deployment, high availability, and elastic scaling.',
+    title: 'Architecture That Scales',
+    desc: 'Cloud-native, API-first builds designed to handle 10x your current volume without a rebuild. We think about growth before you have to.',
   },
   {
     icon: 'handshake',
-    title: 'Dedicated Partnership Model',
-    desc: 'From strategy through deployment and ongoing optimization — a single team accountable for your success.',
+    title: 'Direct Access to Senior Builders',
+    desc: 'You work with the people writing the code and designing the systems — not account managers. Decisions get made fast.',
   },
   {
     icon: 'building',
-    title: 'Industry Expertise',
-    desc: 'Proven experience across healthcare, finance, e-commerce, SaaS, and professional services verticals.',
+    title: 'Cross-Industry Experience',
+    desc: 'Healthcare, legal, SaaS, e-commerce, logistics, coaching — we\'ve shipped production systems across verticals and know the domain-specific tradeoffs.',
   },
 ]
 
 const testimonials = [
   {
-    quote: 'Zentro transformed our customer communication infrastructure. Their Twilio and automation platform reduced support volume by 60% while improving response times across all channels.',
-    name: 'Sarah Mitchell',
-    title: 'VP of Operations',
-    company: 'Global Commerce Solutions',
-    initials: 'SM',
-    industry: 'E-Commerce',
-    rating: 5,
-  },
-  {
-    quote: 'The AI agent deployment exceeded our expectations. We achieved 3x lead qualification rates with enterprise-grade reliability and full integration into our existing CRM stack.',
-    name: 'David Chen',
-    title: 'Chief Technology Officer',
-    company: 'TechFlow Enterprises',
-    initials: 'DC',
-    industry: 'SaaS',
-    rating: 5,
-  },
-  {
-    quote: 'Zentro delivered a complete digital experience platform in record time. The automation architecture alone saves our team 20+ hours per week with measurable ROI from day one.',
-    name: 'Maria Torres',
-    title: 'Director of Digital Strategy',
-    company: 'GrowthPath International',
-    initials: 'MT',
-    industry: 'Professional Services',
-    rating: 5,
-  },
-  {
-    quote: 'Their Azure and cloud integration expertise helped us migrate 12 legacy systems without downtime. We cut infrastructure costs by 35% in the first quarter alone.',
-    name: 'James Okonkwo',
-    title: 'Head of Infrastructure',
-    company: 'FinServe Global',
-    initials: 'JO',
-    industry: 'Finance',
-    rating: 5,
-  },
-  {
-    quote: 'From discovery to go-live in six weeks — Zentro built our omnichannel patient communication system with HIPAA-compliant workflows that our clinical teams actually love using.',
-    name: 'Dr. Emily Hartwell',
+    quote: "Zentro built our patient communication system in 8 weeks. Missed appointments dropped 52% in the first month. The HIPAA-compliant workflow gave our compliance team full confidence from day one.",
+    name: 'Dr. Priya Nair',
     title: 'Chief Digital Officer',
-    company: 'MedBridge Health',
-    initials: 'EH',
+    company: 'HealthFirst Networks',
+    initials: 'PN',
     industry: 'Healthcare',
     rating: 5,
   },
   {
-    quote: 'The Stripe and funnel integration Zentro built generated $2.2M in new revenue within 90 days. Their team thinks like product owners, not just developers.',
-    name: 'Alex Rivera',
-    title: 'CEO',
-    company: 'ScaleUp Ventures',
-    initials: 'AR',
-    industry: 'Growth & VC',
+    quote: "The AI lead qualification agent they shipped pays for itself every week. Our SDRs now only talk to warm, scored prospects. Pipeline quality jumped immediately and the team actually loves using it.",
+    name: 'Marcus Webb',
+    title: 'Head of Revenue',
+    company: 'NovaSales Pro',
+    initials: 'MW',
+    industry: 'SaaS',
+    rating: 5,
+  },
+  {
+    quote: "We went from a chaotic mix of spreadsheets and email to a fully automated client portal in 10 weeks. Onboarding time went from 4 days to 90 minutes. Our clients noticed immediately.",
+    name: 'Rachel Oduya',
+    title: 'Managing Partner',
+    company: 'Meridian Legal Partners',
+    initials: 'RO',
+    industry: 'Legal / Professional Services',
+    rating: 5,
+  },
+  {
+    quote: "Zentro connected Shopify, QuickBooks, and Klaviyo with 40+ Zapier workflows in four weeks. We recovered 18 hours a week and closed our monthly books in a single day instead of five.",
+    name: 'Danny Cho',
+    title: 'Operations Lead',
+    company: 'BrightCart Commerce',
+    initials: 'DC',
+    industry: 'E-Commerce',
+    rating: 5,
+  },
+  {
+    quote: "$1.8M in 90 days from the funnel they built. More than the outcome, it was how they approached it — like product owners who actually wanted the launch to work, not just developers shipping tickets.",
+    name: 'Simone Carter',
+    title: 'Founder & CEO',
+    company: 'Apex Coaching Group',
+    initials: 'SC',
+    industry: 'Online Education',
+    rating: 5,
+  },
+  {
+    quote: "Our drivers and customers both noticed the difference within the first week. Inbound 'where is my order' calls dropped 60%. The SMS flow Zentro built is now a core part of our operations.",
+    name: 'Tariq Al-Rashid',
+    title: 'Head of Operations',
+    company: 'SwiftLogix Fleet',
+    initials: 'TR',
+    industry: 'Logistics',
     rating: 5,
   },
 ]
@@ -144,12 +144,12 @@ const panelTags = [
 ]
 
 const impactCards = [
-  { slug: 'twilio', stat: '60%', label: 'Support Volume Reduced', desc: 'Average reduction in customer support tickets after AI & automation deployment.' },
-  { slug: 'openai', stat: '3×', label: 'Lead Qualification', desc: 'Increase in qualified leads through intelligent conversational AI systems.' },
-  { slug: 'zapier', stat: '20h+', label: 'Weekly Time Saved', desc: 'Operational hours reclaimed per team through workflow automation.' },
-  { slug: 'google-cloud', stat: '40+', label: 'Global Markets', desc: 'Countries served with multi-region cloud infrastructure and compliance.' },
-  { slug: 'stripe', stat: '$2.2M', label: 'Revenue Generated', desc: 'Documented revenue impact from digital experience platform launches.' },
-  { slug: 'microsoft-azure', stat: '99.9%', label: 'Platform Uptime', desc: 'Enterprise SLA maintained across mission-critical communication systems.' },
+  { slug: 'twilio', stat: '52%', label: 'Missed Appointments Reduced', desc: 'Healthcare client cut no-shows through automated Twilio SMS & WhatsApp reminders.' },
+  { slug: 'openai', stat: '3.4×', label: 'Lead Qualification Rate', desc: 'Sales SaaS client multiplied qualified pipeline using a GPT-4o conversational agent.' },
+  { slug: 'zapier', stat: '18h+', label: 'Weekly Hours Saved', desc: 'E-commerce brand reclaimed 18 hours per week by automating cross-platform data sync.' },
+  { slug: 'google-cloud', stat: '18+', label: 'Countries Active', desc: 'Multi-region deployments serving clients in North America, Europe, Middle East & APAC.' },
+  { slug: 'stripe', stat: '$1.8M', label: 'Revenue in 90 Days', desc: 'Online coaching brand launched a Stripe-powered funnel generating $1.8M in first quarter.' },
+  { slug: 'microsoft-azure', stat: '99.9%', label: 'Platform Uptime', desc: 'Azure-hosted client portals and communication systems maintained across all engagements.' },
 ]
 
 export default function Home() {
@@ -167,20 +167,20 @@ export default function Home() {
             animate="visible"
           >
             <motion.span className="hero-eyebrow" variants={heroItem}>
-              Trusted by Global Organizations
+              Built for Startups & Scale-ups
             </motion.span>
             <h1>
               <TextReveal
-                text="Enterprise Automation & Digital Solutions for the Modern Organization"
+                text="Automation, AI & Integrations That Ship Fast and Scale Smart"
                 as="span"
                 className="hero-title-reveal"
                 immediate
               />
             </h1>
             <motion.p className="hero-desc" variants={heroItem}>
-              Zentro delivers scalable cloud integrations, intelligent automation,
-              and AI-powered systems that drive operational excellence and measurable
-              business growth for enterprises worldwide.
+              Zentro helps growing companies replace manual work with intelligent
+              automations, connected systems, and AI-powered workflows — so you
+              move faster without adding headcount.
             </motion.p>
             <motion.div className="hero-actions" variants={heroItem}>
               <MagneticButton>
@@ -213,8 +213,8 @@ export default function Home() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.9 }}
                   >
-                    <strong>10M+</strong>
-                    <span>Messages Processed</span>
+                    <strong>4M+</strong>
+                    <span>Tasks Automated</span>
                   </motion.div>
                   <motion.div
                     className="panel-stat"
@@ -376,43 +376,33 @@ export default function Home() {
           <Reveal>
             <div className="section-header center">
               <span className="section-eyebrow">Why Zentro</span>
-              <h2>Built for Enterprise Standards</h2>
+              <h2>What makes us different</h2>
               <p>
-                We combine deep technical expertise with a business-first approach
-                to deliver solutions that meet the demands of global organizations.
+                We're a lean team of senior builders who care about outcomes,
+                not just deliverables. Here's how we work.
               </p>
             </div>
           </Reveal>
           <motion.div
-            className="capabilities-list"
+            className="capabilities-grid"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.15 }}
           >
             {capabilities.map(({ icon, title, desc }, i) => (
               <motion.div
                 key={title}
-                className="capability-item"
+                className="capability-card"
                 variants={staggerItem}
-                whileHover={{ x: 8, backgroundColor: 'var(--surface)' }}
+                whileHover={{ y: -4 }}
               >
-                <motion.div
-                  className="capability-index"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                >
-                  {String(i + 1).padStart(2, '0')}
-                </motion.div>
+                <span className="capability-card-num">{String(i + 1).padStart(2, '0')}</span>
                 <div className="icon-wrap icon-wrap-lg">
-                  <Icon name={icon} size={26} />
+                  <Icon name={icon} size={22} />
                 </div>
-                <div>
-                  <h3>{title}</h3>
-                  <p>{desc}</p>
-                </div>
+                <h3>{title}</h3>
+                <p>{desc}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -425,56 +415,41 @@ export default function Home() {
           <Reveal>
             <div className="section-header center">
               <span className="section-eyebrow">Client Success</span>
-              <h2>Trusted by Industry Leaders</h2>
+              <h2>What our clients say</h2>
               <p>
-                Real outcomes from organizations that partnered with Zentro to
-                modernize operations, automate workflows, and scale globally.
+                Real words from the founders, operators, and teams we've worked with.
               </p>
             </div>
           </Reveal>
-          <motion.div
-            className="testimonials-grid"
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-          >
-            {testimonials.map(({ quote, name, title, company, initials, industry, rating }) => (
-              <motion.div key={name} variants={staggerItem}>
-                <motion.blockquote
-                  className="testimonial-card card"
-                  variants={cardHover}
-                  initial="rest"
-                  whileHover="hover"
-                >
-                  <div className="testimonial-card-top">
-                    <span className="testimonial-industry">{industry}</span>
-                    <div className="testimonial-stars" aria-label={`${rating} out of 5 stars`}>
-                      {Array.from({ length: rating }).map((_, i) => (
-                        <Icon key={i} name="star" size={16} />
-                      ))}
-                    </div>
+        </div>
+
+        {/* Marquee — duplicated for seamless loop */}
+        <div className="testimonials-marquee-wrap" aria-label="Client testimonials">
+          <div className="testimonials-track">
+            {[...testimonials, ...testimonials].map(({ quote, name, title, company, initials, industry, rating }, i) => (
+              <blockquote key={i} className="testimonial-card">
+                <div className="testimonial-card-top">
+                  <span className="testimonial-industry">{industry}</span>
+                  <div className="testimonial-stars" aria-label={`${rating} out of 5 stars`}>
+                    {Array.from({ length: rating }).map((_, j) => (
+                      <Icon key={j} name="star" size={13} />
+                    ))}
                   </div>
-                  <div className="testimonial-quote-icon" aria-hidden="true">
-                    <Icon name="quote" size={32} />
+                </div>
+                <div className="testimonial-quote-icon" aria-hidden="true">
+                  <Icon name="quote" size={24} />
+                </div>
+                <p>&ldquo;{quote}&rdquo;</p>
+                <footer>
+                  <div className="testimonial-avatar" aria-hidden="true">{initials}</div>
+                  <div>
+                    <strong>{name}</strong>
+                    <span>{title}, {company}</span>
                   </div>
-                  <p>&ldquo;{quote}&rdquo;</p>
-                  <footer>
-                    <motion.div
-                      className="testimonial-avatar"
-                      aria-hidden="true"
-                    >
-                      {initials}
-                    </motion.div>
-                    <div>
-                      <strong>{name}</strong>
-                      <span>{title}, {company}</span>
-                    </div>
-                  </footer>
-                </motion.blockquote>
-              </motion.div>
+                </footer>
+              </blockquote>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -502,11 +477,11 @@ export default function Home() {
               </MagneticButton>
             </div>
             <div className="cta-trust-row">
-              <span><strong>500+</strong> deployments</span>
+              <span><strong>120+</strong> projects delivered</span>
               <span className="cta-trust-divider" aria-hidden="true" />
               <span><strong>99.9%</strong> uptime SLA</span>
               <span className="cta-trust-divider" aria-hidden="true" />
-              <span><strong>40+</strong> countries</span>
+              <span><strong>18+</strong> countries</span>
             </div>
           </Reveal>
         </div>

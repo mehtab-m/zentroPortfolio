@@ -10,98 +10,128 @@ import './Portfolio.css'
 const projects = [
   {
     category: 'Communication',
-    title: 'Global SMS & Voice Platform for E-Commerce Enterprise',
-    desc: 'Deployed a mission-critical communication infrastructure using Twilio, enabling order confirmations, shipping updates, and automated customer support across 12 regions.',
-    tags: ['Twilio', 'Zapier', 'Node.js', 'React'],
+    client: 'HealthFirst Networks',
+    industry: 'Healthcare',
+    title: 'HIPAA-Compliant Patient Communication Platform',
+    desc: 'Built a Twilio-powered omnichannel messaging system for a regional hospital network serving 180k patients. Automated appointment reminders, discharge follow-ups, and after-hours IVR routing across 14 facilities — all within HIPAA-aligned data workflows.',
+    tags: ['Twilio', 'Node.js', 'IVR', 'Webhooks'],
+    duration: '8 weeks',
     features: [
-      'Multi-region Twilio SMS & Voice integration',
-      'Real-time Zapier workflow orchestration',
-      'Executive analytics dashboard',
+      'Multi-facility IVR with intelligent call routing',
+      'Automated SMS & WhatsApp appointment reminders',
+      'HIPAA-aligned data pipeline with audit logging',
+      'Real-time call analytics dashboard',
     ],
     results: [
-      '45% increase in customer response rate',
-      '60% reduction in support ticket volume',
-      '10M+ automated messages monthly',
+      '52% drop in missed appointments',
+      '1,400+ daily calls handled automatically',
+      '31% reduction in front-desk call volume',
+      '$480k/year in operational savings',
     ],
   },
   {
     category: 'AI',
-    title: 'Enterprise AI Lead Qualification Platform',
-    desc: 'Built an intelligent conversational system that qualifies inbound leads 24/7, scores prospects against custom criteria, and routes qualified opportunities to sales teams via CRM integration.',
-    tags: ['AI Agents', 'OpenAI', 'Zapier', 'CRM'],
+    client: 'NovaSales Pro',
+    industry: 'SaaS / Sales Tech',
+    title: 'AI-Powered Lead Qualification Engine',
+    desc: 'Deployed a conversational AI agent that engages inbound leads via chat and SMS 24/7, qualifies them against custom ICP criteria, scores intent, and auto-routes hot prospects to sales reps through HubSpot — eliminating manual SDR overhead on low-intent contacts.',
+    tags: ['OpenAI GPT-4o', 'Zapier', 'HubSpot', 'Node.js'],
+    duration: '6 weeks',
     features: [
-      'Natural language lead conversations',
-      'Custom scoring & qualification engine',
-      'Automated CRM & Slack routing',
+      'GPT-4o conversational qualification agent',
+      'Custom ICP scoring & intent classification',
+      'Auto-routing to CRM with enriched lead profiles',
+      'Slack alerts for high-intent prospects',
     ],
     results: [
-      '3x increase in qualified leads',
-      '70% reduction in sales response time',
-      '24/7 coverage with zero incremental cost',
+      '3.4× increase in sales-qualified leads',
+      '68% reduction in SDR time on unqualified leads',
+      '24/7 coverage with zero additional headcount',
+      'Average 4-minute response time vs. 6-hour prior',
     ],
   },
   {
     category: 'Digital Experience',
-    title: 'Digital Experience Platform & Membership Portal',
-    desc: 'Delivered a complete digital experience platform with sales funnels, automated email campaigns, and a gated membership portal for a global education provider.',
-    tags: ['Systeme.io', 'Email Automation', 'Funnels'],
+    client: 'Apex Coaching Group',
+    industry: 'Online Education',
+    title: 'High-Ticket Funnel & Membership Platform',
+    desc: 'Designed and launched a full digital experience for a business coaching brand: a multi-step webinar funnel with upsell sequences, Stripe-integrated checkout, and a gated membership portal delivering course content to 3,200+ active members.',
+    tags: ['Funnel Builder', 'Stripe', 'Email Automation', 'Membership'],
+    duration: '5 weeks',
     features: [
-      'Multi-step funnel with upsell sequences',
-      'Automated 12-email nurture campaign',
-      'Secure membership portal',
+      'Webinar registration + replay funnel with upsells',
+      '14-email automated nurture sequence',
+      'Stripe subscription billing & dunning flows',
+      'Gated membership portal with content drip',
     ],
     results: [
-      '38% funnel conversion rate',
-      '$2.2M revenue in first 90 days',
-      '20+ hours/week operational savings',
+      '41% webinar-to-purchase conversion rate',
+      '$1.8M in revenue within first 90 days',
+      '3,200+ active paying members onboarded',
+      '22 hours/week saved on manual admin',
     ],
   },
   {
     category: 'Web Application',
-    title: 'Enterprise Client Portal with Workflow Automation',
-    desc: 'Architected and deployed a full-stack client portal automating onboarding, document management, status tracking, and billing for a professional services firm serving 2,000+ clients.',
+    client: 'Meridian Legal Partners',
+    industry: 'Professional Services',
+    title: 'Client Portal with Automated Onboarding',
+    desc: 'Built a full-stack secure client portal for a mid-size law firm managing 2,500+ active matters. The platform automates onboarding, collects e-signatures, tracks case milestones, and handles invoicing — replacing a patchwork of spreadsheets and email threads.',
     tags: ['React', 'Node.js', 'PostgreSQL', 'Stripe'],
+    duration: '10 weeks',
     features: [
-      'Automated onboarding workflow',
-      'Document upload & management system',
-      'Stripe billing & invoice automation',
+      'Automated client onboarding with e-signature',
+      'Real-time case tracking & milestone alerts',
+      'Document management with version control',
+      'Stripe billing & automated invoice delivery',
     ],
     results: [
-      'Onboarding reduced from 3 days to 2 hours',
-      '100% billing automation achieved',
-      '40% improvement in client satisfaction',
+      'Onboarding time cut from 4 days to 90 minutes',
+      '100% billing automation (zero manual invoices)',
+      '44% improvement in client satisfaction score',
+      '2,500+ active matters managed in one platform',
     ],
   },
   {
     category: 'Automation',
-    title: 'Multi-Platform Integration Hub',
-    desc: 'Engineered a network of 30+ automated workflows connecting Shopify, HubSpot, Google Workspace, Slack, and email — eliminating manual data entry and enabling real-time executive reporting.',
-    tags: ['Zapier', 'Shopify', 'HubSpot', 'Slack'],
+    client: 'BrightCart Commerce',
+    industry: 'E-Commerce',
+    title: 'Multi-Platform Operations Automation Hub',
+    desc: 'Engineered 40+ interconnected Zapier workflows syncing Shopify, Klaviyo, QuickBooks, Google Sheets, and Slack in real time. Eliminated manual data entry across 6 platforms and gave the executive team live visibility into inventory, revenue, and support queues.',
+    tags: ['Zapier', 'Shopify', 'Klaviyo', 'QuickBooks'],
+    duration: '4 weeks',
     features: [
-      '30+ automated workflows across 6 platforms',
-      'Real-time inventory & sales synchronization',
-      'Automated daily executive reports',
+      '40+ automated workflows across 6 platforms',
+      'Real-time inventory & order sync with QBO',
+      'Automated daily P&L and inventory reports',
+      'Low-stock and refund Slack alert system',
     ],
     results: [
-      '15 hours/week of manual work eliminated',
-      'Zero data entry errors',
-      'Real-time cross-platform visibility',
+      '18 hours/week of manual work eliminated',
+      'Zero data discrepancies across platforms',
+      'Finance close time reduced from 5 days to 1',
+      'Real-time exec dashboard operational',
     ],
   },
   {
     category: 'Communication',
-    title: 'Healthcare IVR & Appointment System',
-    desc: 'Developed a HIPAA-aligned Twilio IVR system for a healthcare network, routing 1,200+ daily calls and enabling voice-based appointment scheduling across 8 facilities.',
-    tags: ['Twilio', 'IVR', 'Node.js', 'Webhooks'],
+    client: 'SwiftLogix Fleet',
+    industry: 'Logistics & Transportation',
+    title: 'Driver & Customer Notification System',
+    desc: 'Deployed a Twilio-based real-time notification system for a last-mile delivery company operating 320 drivers across 3 cities. Customers receive live SMS delivery windows, ETAs, and confirmation links; dispatchers get driver status alerts without manual check-ins.',
+    tags: ['Twilio', 'Zapier', 'React', 'Webhooks'],
+    duration: '7 weeks',
     features: [
-      'Multi-level IVR call routing',
-      'Voice-based appointment booking',
-      'After-hours automated response system',
+      'Real-time SMS ETAs and delivery confirmations',
+      'Two-way driver dispatch messaging',
+      'Automated exception alerts (delays, failures)',
+      'Customer self-serve reschedule flow via SMS',
     ],
     results: [
-      '55% improvement in call resolution rate',
-      '30% reduction in average handle time',
-      '1,200+ calls handled daily',
+      '28% improvement in first-attempt delivery rate',
+      '60% reduction in inbound "where is my order" calls',
+      '320 drivers coordinated with zero additional ops staff',
+      '4.7/5 average post-delivery customer rating',
     ],
   },
 ]
@@ -128,15 +158,15 @@ export default function Portfolio() {
             Case Studies
           </motion.span>
           <h1>
-            <TextReveal text="Proven Results for Global Organizations" as="span" />
+            <TextReveal text="Real Projects. Measurable Results." as="span" />
           </h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
           >
-            Explore how Zentro has delivered measurable business outcomes
-            for enterprises across industries worldwide.
+            A look at how Zentro has helped startups and scale-ups across industries
+            build smarter systems, automate operations, and grow faster.
           </motion.p>
         </div>
       </section>
@@ -176,7 +206,7 @@ export default function Portfolio() {
             key={active}
           >
             <AnimatePresence mode="popLayout">
-              {filtered.map(({ title, desc, tags, features, results }, i) => (
+              {filtered.map(({ title, client, industry, desc, tags, features, results, duration }, i) => (
                 <motion.div
                   key={title}
                   layout
@@ -188,11 +218,20 @@ export default function Portfolio() {
                 >
                   <motion.article
                     className="project-card card card-lift"
-                    whileHover={{ y: -8, boxShadow: 'var(--shadow-lg)' }}
+                    whileHover={{ y: -6, boxShadow: 'var(--shadow-lg)' }}
                   >
-                    <div className="project-tags">
-                      {tags.map(t => <span key={t} className="tag">{t}</span>)}
+                    <div className="project-meta">
+                      <div className="project-tags">
+                        {tags.map(t => <span key={t} className="tag">{t}</span>)}
+                      </div>
+                      <span className="project-duration">{duration}</span>
                     </div>
+
+                    <div className="project-client-row">
+                      <span className="project-client">{client}</span>
+                      <span className="project-industry">{industry}</span>
+                    </div>
+
                     <h2>{title}</h2>
                     <p className="project-desc">{desc}</p>
 

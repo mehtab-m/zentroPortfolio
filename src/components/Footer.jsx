@@ -3,6 +3,12 @@ import { motion } from 'framer-motion'
 import { staggerContainer, staggerItem } from '../lib/motion'
 import './Footer.css'
 
+const socialLinks = [
+  { label: 'X', href: '#' },
+  { label: 'in', href: '#' },
+  { label: 'gh', href: '#' },
+]
+
 export default function Footer() {
   const year = new Date().getFullYear()
 
@@ -14,29 +20,39 @@ export default function Footer() {
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.15 }}
         >
+          {/* Brand */}
           <motion.div className="footer-brand" variants={staggerItem}>
             <Link to="/" className="footer-logo">
               <span className="logo-mark" aria-hidden="true">Z</span>
               <span className="logo-text">Zentro</span>
             </Link>
             <p>
-              Enterprise-grade automation, cloud integrations, and intelligent
-              digital solutions for organizations worldwide.
+              We help startups and scale-ups replace manual work with intelligent
+              automations, connected systems, and AI-powered workflows.
             </p>
+            <div className="footer-social" aria-label="Social media links">
+              {socialLinks.map(({ label, href }) => (
+                <a key={label} href={href} className="footer-social-link" aria-label={label}>
+                  {label}
+                </a>
+              ))}
+            </div>
           </motion.div>
 
+          {/* Solutions */}
           <motion.div className="footer-col" variants={staggerItem}>
             <h3>Solutions</h3>
             <nav aria-label="Solutions">
-              <Link to="/services">Cloud Integration</Link>
-              <Link to="/services">Automation Platform</Link>
-              <Link to="/services">AI &amp; Intelligence</Link>
+              <Link to="/services">Workflow Automation</Link>
               <Link to="/services">Communication Systems</Link>
+              <Link to="/services">AI &amp; Agents</Link>
+              <Link to="/services">Web Applications</Link>
             </nav>
           </motion.div>
 
+          {/* Company */}
           <motion.div className="footer-col" variants={staggerItem}>
             <h3>Company</h3>
             <nav aria-label="Company">
@@ -47,12 +63,13 @@ export default function Footer() {
             </nav>
           </motion.div>
 
+          {/* Contact */}
           <motion.div className="footer-col" variants={staggerItem}>
-            <h3>Contact</h3>
+            <h3>Get in Touch</h3>
             <nav aria-label="Contact">
               <Link to="/contact">Request a Demo</Link>
               <Link to="/contact">Sales Inquiry</Link>
-              <Link to="/contact">Technical Support</Link>
+              <Link to="/contact">Support</Link>
               <a href="mailto:hello@zentro.io">hello@zentro.io</a>
             </nav>
           </motion.div>
@@ -64,8 +81,8 @@ export default function Footer() {
           <p>&copy; {year} Zentro Technologies. All rights reserved.</p>
           <div className="footer-legal">
             <Link to="/contact">Privacy</Link>
-            <Link to="/contact">Terms of Service</Link>
-            <Link to="/contact">Cookie Policy</Link>
+            <Link to="/contact">Terms</Link>
+            <Link to="/contact">Cookies</Link>
           </div>
         </div>
       </div>
