@@ -1,23 +1,31 @@
+/* ── Filter tabs ──────────────────────────────────── */
 .filter-tabs {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   flex-wrap: wrap;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
+  padding: 6px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) + 4px);
+  width: fit-content;
+  max-width: 100%;
 }
 
 .filter-tab {
   position: relative;
-  padding: 8px 16px;
+  padding: 7px 14px;
   border-radius: var(--radius);
-  border: 1px solid var(--border);
-  background: var(--bg);
+  border: none;
+  background: transparent;
   color: var(--text);
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
-  transition: color 0.15s, border-color 0.15s;
+  transition: color 0.15s;
   font-family: inherit;
   overflow: hidden;
+  white-space: nowrap;
 }
 
 .filter-tab-label {
@@ -28,32 +36,62 @@
 .filter-tab-bg {
   position: absolute;
   inset: 0;
-  background: var(--primary);
-  border-radius: inherit;
+  background: var(--surface-elevated);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
   z-index: 0;
 }
 
 .filter-tab:hover {
-  border-color: var(--border-strong);
   color: var(--text-h);
 }
 
 .filter-tab.active {
-  border-color: var(--primary);
-  color: var(--text-inverse);
+  color: var(--primary);
+  font-weight: 600;
 }
 
+/* ── Projects grid ────────────────────────────────── */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  gap: 20px;
 }
 
+/* ── Project card ─────────────────────────────────── */
 .project-card {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 0;
   height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.project-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 1px var(--primary), var(--shadow-md);
+}
+
+/* top accent strip */
+.project-card::before {
+  content: '';
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), #50e3c2);
+  flex-shrink: 0;
+}
+
+.project-card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
 }
 
 .project-meta {
@@ -66,9 +104,21 @@
 
 .project-tags {
   display: flex;
-  gap: 6px;
+  gap: 5px;
   flex-wrap: wrap;
   flex: 1;
+}
+
+.tag {
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  background: var(--primary-subtle);
+  color: var(--primary);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid var(--primary-light);
 }
 
 .project-duration {
@@ -76,73 +126,75 @@
   font-weight: 600;
   color: var(--text-muted);
   white-space: nowrap;
-  padding: 3px 8px;
+  padding: 2px 8px;
   background: var(--surface-alt);
   border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
 }
 
+/* client row */
 .project-client-row {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: wrap;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
 }
 
 .project-client {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--text-h);
 }
 
 .project-industry {
-  font-size: 11px;
-  font-weight: 600;
+  font-size: 10px;
+  font-weight: 700;
   color: var(--primary);
   background: var(--primary-subtle);
   padding: 2px 8px;
   border-radius: 999px;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.tag {
-  padding: 3px 10px;
-  border-radius: var(--radius-sm);
-  background: var(--primary-subtle);
-  color: var(--primary);
-  font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
+  border: 1px solid var(--primary-light);
 }
 
 .project-card h2 {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--text-h);
   line-height: 1.35;
 }
 
 .project-desc {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--text);
-  line-height: 1.65;
+  line-height: 1.6;
 }
 
+/* deliverables + results */
 .project-cols {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  padding-top: 8px;
+  gap: 12px;
+  padding-top: 4px;
+}
+
+.project-col-block {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px;
 }
 
 .project-cols h3 {
-  font-size: 11px;
-  font-weight: 600;
+  font-size: 10px;
+  font-weight: 700;
   color: var(--text-muted);
-  margin: 0 0 10px;
+  margin: 0 0 8px;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.07em;
 }
 
 .project-cols ul {
@@ -151,33 +203,41 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
 .project-cols ul li {
   display: flex;
   align-items: flex-start;
-  gap: 8px;
-  font-size: 13px;
+  gap: 6px;
+  font-size: 12px;
   color: var(--text);
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
 .project-cols ul li .icon {
   color: var(--primary);
   flex-shrink: 0;
-  margin-top: 2px;
+  margin-top: 1px;
 }
 
 .results-list li .icon {
   color: var(--success);
 }
 
-.project-cta {
-  align-self: flex-start;
-  margin-top: 4px;
+/* CTA row */
+.project-card-footer {
+  padding: 12px 20px;
+  border-top: 1px solid var(--border);
+  background: var(--surface-alt);
 }
 
+.project-cta {
+  font-size: 13px;
+  padding: 7px 14px;
+}
+
+/* ── Mobile ───────────────────────────────────────── */
 @media (max-width: 900px) {
   .projects-grid {
     grid-template-columns: 1fr;
@@ -185,17 +245,50 @@
 }
 
 @media (max-width: 768px) {
+  .filter-tabs {
+    width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .filter-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .project-card-body {
+    padding: 16px;
+  }
+
+  .project-card-footer {
+    padding: 10px 16px;
+  }
+
   .project-cols {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 8px;
   }
 
-  .filter-tabs {
-    gap: 6px;
+  .project-card h2 {
+    font-size: 15px;
   }
 
-  .filter-tab {
-    padding: 7px 12px;
-    font-size: 12px;
+  .project-desc {
+    /* trim desc on mobile to 3 lines */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-cols ul li {
+    font-size: 11.5px;
+  }
+
+  .project-card h2 {
+    font-size: 14px;
   }
 }

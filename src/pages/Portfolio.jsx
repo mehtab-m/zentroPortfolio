@@ -217,52 +217,56 @@ export default function Portfolio() {
                   transition={{ delay: i * 0.05 }}
                 >
                   <motion.article
-                    className="project-card card card-lift"
-                    whileHover={{ y: -6, boxShadow: 'var(--shadow-lg)' }}
+                    className="project-card"
+                    whileHover={{ y: -4 }}
                   >
-                    <div className="project-meta">
-                      <div className="project-tags">
-                        {tags.map(t => <span key={t} className="tag">{t}</span>)}
+                    <div className="project-card-body">
+                      <div className="project-meta">
+                        <div className="project-tags">
+                          {tags.map(t => <span key={t} className="tag">{t}</span>)}
+                        </div>
+                        <span className="project-duration">{duration}</span>
                       </div>
-                      <span className="project-duration">{duration}</span>
+
+                      <div className="project-client-row">
+                        <span className="project-client">{client}</span>
+                        <span className="project-industry">{industry}</span>
+                      </div>
+
+                      <h2>{title}</h2>
+                      <p className="project-desc">{desc}</p>
+
+                      <div className="project-cols">
+                        <div className="project-col-block">
+                          <h3>Key Deliverables</h3>
+                          <ul>
+                            {features.map(f => (
+                              <li key={f}>
+                                <Icon name="check" size={12} />
+                                {f}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div className="project-col-block">
+                          <h3>Business Impact</h3>
+                          <ul className="results-list">
+                            {results.map(r => (
+                              <li key={r}>
+                                <Icon name="chart" size={12} />
+                                {r}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
                     </div>
 
-                    <div className="project-client-row">
-                      <span className="project-client">{client}</span>
-                      <span className="project-industry">{industry}</span>
+                    <div className="project-card-footer">
+                      <Link to="/contact" className="btn btn-outline project-cta">
+                        Discuss a Similar Project
+                      </Link>
                     </div>
-
-                    <h2>{title}</h2>
-                    <p className="project-desc">{desc}</p>
-
-                    <div className="project-cols">
-                      <div>
-                        <h3>Key Deliverables</h3>
-                        <ul>
-                          {features.map(f => (
-                            <li key={f}>
-                              <Icon name="check" size={14} />
-                              {f}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div>
-                        <h3>Business Impact</h3>
-                        <ul className="results-list">
-                          {results.map(r => (
-                            <li key={r}>
-                              <Icon name="chart" size={14} />
-                              {r}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-
-                    <Link to="/contact" className="btn btn-outline project-cta">
-                      Discuss a Similar Project
-                    </Link>
                   </motion.article>
                 </motion.div>
               ))}
