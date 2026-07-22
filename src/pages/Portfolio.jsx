@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { motion, AnimatePresence, LayoutGroup } from 'framer-motion'
 import { Icon } from '../components/Icons'
 import TextReveal from '../components/TextReveal'
+import Reveal from '../components/Reveal'
 import { staggerContainer, staggerItem } from '../lib/motion'
 import './Portfolio.css'
 
