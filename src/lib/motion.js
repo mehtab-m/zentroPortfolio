@@ -92,12 +92,11 @@ export const heroStagger = {
 }
 
 export const heroItem = {
-  hidden: { opacity: 0, y: 36, filter: 'blur(8px)' },
+  hidden: { opacity: 0, y: 28 },
   visible: {
     opacity: 1,
     y: 0,
-    filter: 'blur(0px)',
-    transition: { duration: 0.8, ease },
+    transition: { duration: 0.6, ease },
   },
 }
 

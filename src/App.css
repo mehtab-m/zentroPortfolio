@@ -1,1 +1,15 @@
-/* App-level layout — pages handle their own padding */
+/* Per-page fade-in on mount — pure CSS, no animation library blocking rendering */
+.page-transition {
+  animation: pageFadeIn 0.3s ease both;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

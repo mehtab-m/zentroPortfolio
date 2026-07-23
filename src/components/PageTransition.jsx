@@ -1,22 +1,16 @@
 import { useLocation } from 'react-router-dom'
-import { AnimatePresence, motion } from 'framer-motion'
-import { pageVariants } from '../lib/motion'
 
+// Simple CSS-based page transition.
+// Using a key on the wrapper re-mounts the div on every route change,
+// which re-triggers the CSS pageFadeIn animation.
+// No framer-motion AnimatePresence needed — avoids the production bug
+// where AnimatePresence mode="wait" held children at opacity:0 during
+// the exit phase, permanently preventing animated cards from showing.
 export default function PageTransition({ children }) {
-  const location = useLocation()
-
+  const { pathname } = useLocation()
   return (
-    <AnimatePresence mode="wait">
-      <motion.div
-        key={location.pathname}
-        className="page-transition"
-        variants={pageVariants}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-      >
-        {children}
-      </motion.div>
-    </AnimatePresence>
+    <div key={pathname} className="page-transition">
+      {children}
+    </div>
   )
 }
