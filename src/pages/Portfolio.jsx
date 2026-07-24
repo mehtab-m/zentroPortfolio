@@ -4,6 +4,7 @@ import { motion, AnimatePresence, LayoutGroup } from 'framer-motion'
 import { Icon } from '../components/Icons'
 import Reveal from '../components/Reveal'
 import { staggerContainer, staggerItem } from '../lib/motion'
+import { projectVideos } from '../assets/videos/videoLinks'
 import './Portfolio.css'
 
 const projects = [
@@ -11,121 +12,126 @@ const projects = [
     id: 'sms-automation',
     category: 'Communication',
     status: 'live',
+    number: '01',
     title: 'SMS Automation for Membership Platform',
     client: 'Membership SaaS',
     duration: 'Ongoing',
-    desc: 'Automated SMS onboarding, reminder, and re-engagement flows for a membership platform. New members receive a welcome sequence, payment reminders trigger automatically, and churned members get win-back campaigns — all without touching a dashboard.',
+    tagline: 'Zero manual follow-ups. Fully automated.',
+    desc: 'Automated SMS onboarding, payment reminders, and win-back campaigns for a membership platform — all triggered by real events, running without anyone touching a dashboard.',
     stack: ['Systeme.io', 'Zapier', 'Twilio', '.NET Core'],
     deliverables: [
-      'Automated welcome & onboarding SMS sequence',
-      'Payment failure & renewal reminder flows',
+      'Welcome & onboarding SMS sequence',
+      'Payment failure & renewal reminders',
       'Win-back campaign for churned members',
-      'Zapier webhooks connecting all platforms',
     ],
     results: [
-      'Zero manual follow-ups for membership team',
-      'Onboarding completion rate improved significantly',
-      'Live and supported in production',
+      'Zero manual follow-ups required',
+      'Onboarding completion improved',
+      'Running live in production',
     ],
     relatedSolutions: [
-      { label: 'Communication Automation', anchor: 'communication' },
-      { label: 'Workflow Automation', anchor: 'workflow' },
+      { label: 'Communication Automation', to: '/services#communication' },
+      { label: 'Workflow Automation', to: '/services#workflow' },
     ],
   },
   {
     id: 'n8n-automation',
     category: 'Automation',
     status: 'delivered',
-    title: 'n8n Workflow Automation',
+    number: '02',
+    title: 'n8n Workflow Automation Hub',
     client: 'Operations Team',
     duration: '3 weeks',
-    desc: 'Built a network of n8n workflows replacing manual data movement between 5 different tools. Data flows automatically between CRM, email, spreadsheets, and internal dashboards — triggered by real events, no cron jobs needed.',
+    tagline: '15 hours a week back. Zero data entry.',
+    desc: 'A network of n8n workflows replacing manual data movement between CRM, email, spreadsheets, and dashboards. Event-triggered, error-handled, and fully monitored.',
     stack: ['n8n', 'REST APIs', 'Webhooks', 'JSON', '.NET Core'],
     deliverables: [
-      'Multi-step n8n workflows across 5 platforms',
+      'Multi-step workflows across 5 platforms',
       'Real-time webhook-triggered data sync',
-      'Error handling with automatic retry logic',
-      'Admin dashboard for workflow monitoring',
+      'Error handling with automatic retry',
     ],
     results: [
-      'Eliminated ~15 hours/week of manual data entry',
-      'Zero data sync errors after deployment',
-      'Full visibility into pipeline health',
+      '~15 hours/week of manual work eliminated',
+      'Zero data sync errors post-launch',
+      'Full pipeline visibility dashboard',
     ],
     relatedSolutions: [
-      { label: 'Workflow Automation', anchor: 'workflow' },
+      { label: 'Workflow Automation', to: '/services#workflow' },
     ],
   },
   {
     id: 'twilio-platform',
     category: 'Communication',
     status: 'delivered',
+    number: '03',
     title: 'Twilio Communication Platform',
     client: 'Customer-Facing Product',
     duration: '6 weeks',
-    desc: 'A full Twilio-powered communication layer built on top of an existing .NET Core backend. Handles outbound SMS, inbound voice routing, real-time status webhooks, and a React dashboard for the support team to monitor all communication activity.',
+    tagline: 'Voice + SMS from one place. Full visibility.',
+    desc: 'A complete Twilio communication layer on top of an existing .NET Core backend. Outbound SMS, inbound voice routing, webhook status pipeline, and a React dashboard for the support team.',
     stack: ['Twilio API', '.NET Core', 'React.js', 'WebSockets'],
     deliverables: [
       'Outbound SMS with delivery tracking',
       'Inbound voice call routing & IVR',
-      'Real-time webhook status pipeline',
-      'React dashboard for communication monitoring',
+      'React monitoring dashboard',
     ],
     results: [
       'Full communication layer live in 6 weeks',
-      'Support team has real-time visibility',
-      'Handles voice + SMS from a single platform',
+      'Real-time support team visibility',
+      'Voice + SMS from a single platform',
     ],
     relatedSolutions: [
-      { label: 'Communication Automation', anchor: 'communication' },
+      { label: 'Communication Automation', to: '/services#communication' },
     ],
   },
   {
     id: 'institute-management',
     category: 'Software',
     status: 'delivered',
+    number: '04',
     title: 'Institute Management System',
     client: 'Education Institute',
     duration: '10 weeks',
-    desc: 'A full-stack institute management system built with Clean Architecture. Manages student enrollment, attendance tracking, fee collection, timetable scheduling, and staff management — replacing a combination of spreadsheets and paper-based processes.',
-    stack: ['ASP.NET Core', 'React.js', 'SQL Server', 'Entity Framework Core', 'Clean Architecture'],
+    tagline: 'Four spreadsheets replaced by one system.',
+    desc: 'A full-stack institute management system with Clean Architecture. Handles student enrollment, attendance, fee collection, and timetable scheduling — replacing spreadsheets and paper completely.',
+    stack: ['ASP.NET Core', 'React.js', 'SQL Server', 'Entity Framework Core'],
     deliverables: [
       'Student enrollment & profile management',
       'Attendance tracking with reporting',
-      'Fee collection & payment history',
-      'Timetable & class scheduling module',
+      'Fee collection & timetable module',
     ],
     results: [
       'Replaced 4 separate spreadsheet systems',
-      'Admin workload reduced significantly',
-      'Full audit trail for all student records',
+      'Admin workload cut significantly',
+      'Full audit trail for all records',
     ],
     relatedSolutions: [
-      { label: 'Custom Software Development', anchor: 'software' },
+      { label: 'Custom Software Development', to: '/services#software' },
     ],
   },
   {
     id: 'face-recognition',
     category: 'AI',
     status: 'delivered',
+    number: '05',
     title: 'AI Face Recognition Security System',
     client: 'Physical Premises',
     duration: '5 weeks',
-    desc: 'An IoT-connected face recognition system that controls physical access to premises. A camera captures faces at entry points, a Python backend identifies registered individuals in real time, and a .NET Core API manages access rules, logs every entry, and alerts on unauthorized attempts.',
-    stack: ['Python', 'OpenCV', 'face_recognition', 'IoT Hardware', '.NET Core', 'SQL Server'],
+    tagline: 'No keys. No cards. Full audit trail.',
+    desc: 'IoT-connected face recognition for physical access control. Camera captures faces at entry, Python backend identifies people in real time, .NET Core API manages rules, logs every entry, and alerts on unauthorized access.',
+    stack: ['Python', 'OpenCV', 'IoT Hardware', '.NET Core', 'SQL Server'],
     deliverables: [
-      'Real-time face detection & identification',
+      'Real-time face detection & ID',
       'IoT door lock integration',
-      'Full access audit log with timestamps',
-      'Admin panel for managing registered users',
+      'Full access audit log',
     ],
     results: [
-      'Keys and access cards fully replaced',
-      'Every entry logged with face match confidence',
-      'Unauthorized access alerts working in real time',
+      'Keys and access cards replaced',
+      'Every entry logged with confidence score',
+      'Unauthorized access alerts live',
     ],
     relatedSolutions: [
-      { label: 'AI & Security Systems', anchor: 'ai' },
+      { label: 'AI & Security Systems', to: '/services#ai' },
     ],
   },
 ]
@@ -133,8 +139,28 @@ const projects = [
 const categories = ['All', 'Communication', 'Automation', 'Software', 'AI']
 
 const statusConfig = {
-  live: { label: 'Live & Supported', color: '#059669' },
-  delivered: { label: 'Delivered', color: '#0078d4' },
+  live:      { label: 'Live & Supported', color: '#059669' },
+  delivered: { label: 'Delivered',        color: '#0078d4' },
+}
+
+function VideoPlayer({ projectId }) {
+  const url = projectVideos[projectId]
+  if (!url) return (
+    <div className="project-video-placeholder">
+      <Icon name="automation" size={28} />
+      <span>Video coming soon</span>
+    </div>
+  )
+  return (
+    <video
+      className="project-video"
+      src={url}
+      controls
+      preload="metadata"
+      playsInline
+      aria-label="Project demo video"
+    />
+  )
 }
 
 export default function Portfolio() {
@@ -150,28 +176,18 @@ export default function Portfolio() {
       {/* ── Hero ── */}
       <section className="page-hero">
         <div className="container">
-          <motion.span
-            className="section-eyebrow"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-          >
+          <motion.span className="section-eyebrow"
+            initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
             Case Studies
           </motion.span>
           <motion.h1
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.4 }}
-          >
-            What We've Actually Built
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.4 }}>
+            5 Real Projects. Real Outcomes.
           </motion.h1>
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.4 }}
-          >
-            Five real projects — communication systems, automation pipelines,
-            custom software, and AI. Each one delivered, live, and documented.
+            initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.4 }}>
+            Communication systems, automation pipelines, custom software, and AI —
+            each one built, delivered, and documented.
           </motion.p>
         </div>
       </section>
@@ -180,7 +196,7 @@ export default function Portfolio() {
       <section className="section">
         <div className="container">
 
-          {/* Filter tabs */}
+          {/* Filter */}
           <LayoutGroup>
             <div className="filter-tabs" role="tablist" aria-label="Filter by category">
               {categories.map(cat => (
@@ -192,11 +208,8 @@ export default function Portfolio() {
                   onClick={() => setActive(cat)}
                 >
                   {active === cat && (
-                    <motion.span
-                      className="filter-tab-bg"
-                      layoutId="filterActive"
-                      transition={{ type: 'spring', stiffness: 400, damping: 30 }}
-                    />
+                    <motion.span className="filter-tab-bg" layoutId="filterActive"
+                      transition={{ type: 'spring', stiffness: 400, damping: 30 }} />
                   )}
                   <span className="filter-tab-label">{cat}</span>
                 </button>
@@ -204,98 +217,93 @@ export default function Portfolio() {
             </div>
           </LayoutGroup>
 
-          {/* Grid */}
+          {/* Project list */}
           <motion.div
-            className="projects-grid"
+            className="projects-list"
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
             key={active}
           >
             <AnimatePresence mode="popLayout">
-              {filtered.map(({ id, title, client, duration, desc, stack, deliverables, results, status, relatedSolutions }) => (
+              {filtered.map(({ id, number, title, client, duration, tagline, desc, stack, deliverables, results, status, relatedSolutions }) => (
                 <motion.article
                   key={id}
                   id={id}
                   layout
                   variants={staggerItem}
-                  exit={{ opacity: 0, scale: 0.95, transition: { duration: 0.18 } }}
-                  className="project-card"
-                  whileHover={{ y: -3 }}
+                  exit={{ opacity: 0, y: 8, transition: { duration: 0.18 } }}
+                  className="project-item"
                 >
-                  {/* Top accent */}
-                  <div className="project-card-accent" />
-
-                  <div className="project-card-body">
-                    {/* Meta row */}
-                    <div className="project-meta">
-                      <div className="project-stack-tags">
-                        {stack.map(s => <span key={s} className="stack-tag">{s}</span>)}
-                      </div>
+                  {/* Left: video */}
+                  <div className="project-item-media">
+                    <VideoPlayer projectId={id} />
+                    <div className="project-item-badges">
                       <span
-                        className="project-status"
-                        style={{ '--status-color': statusConfig[status].color }}
+                        className="project-status-badge"
+                        style={{ '--sc': statusConfig[status].color }}
                       >
                         <span className="status-dot" />
                         {statusConfig[status].label}
                       </span>
-                    </div>
-
-                    {/* Client + duration */}
-                    <div className="project-client-row">
-                      <span className="project-client">{client}</span>
-                      <span className="project-duration">{duration}</span>
-                    </div>
-
-                    {/* Title + desc */}
-                    <h2>{title}</h2>
-                    <p className="project-desc">{desc}</p>
-
-                    {/* Deliverables + Results */}
-                    <div className="project-cols">
-                      <div className="project-col-block">
-                        <h3>What We Built</h3>
-                        <ul>
-                          {deliverables.map(d => (
-                            <li key={d}>
-                              <Icon name="check" size={12} />
-                              {d}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div className="project-col-block results-block">
-                        <h3>Outcome</h3>
-                        <ul className="results-list">
-                          {results.map(r => (
-                            <li key={r}>
-                              <Icon name="chart" size={12} />
-                              {r}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
+                      <span className="project-number-badge">{number}</span>
                     </div>
                   </div>
 
-                  {/* Footer — related solutions + CTA */}
-                  <div className="project-card-footer">
-                    <div className="project-related">
-                      <span className="project-related-label">Related Solutions</span>
-                      {relatedSolutions.map(rs => (
-                        <Link
-                          key={rs.anchor}
-                          to={`/services#${rs.anchor}`}
-                          className="project-related-link"
-                        >
-                          <Icon name="arrow" size={12} />
-                          {rs.label}
-                        </Link>
-                      ))}
+                  {/* Right: content */}
+                  <div className="project-item-content">
+                    {/* header */}
+                    <div className="project-item-header">
+                      <div className="project-item-meta">
+                        <span className="project-client-badge">{client}</span>
+                        <span className="project-dur">{duration}</span>
+                      </div>
+                      <h2>{title}</h2>
+                      <p className="project-tagline">{tagline}</p>
                     </div>
-                    <Link to="/contact" className="btn btn-outline project-cta">
-                      Build Something Similar
-                    </Link>
+
+                    {/* stack */}
+                    <div className="project-stack-row">
+                      {stack.map(s => <span key={s} className="stack-chip">{s}</span>)}
+                    </div>
+
+                    {/* desc */}
+                    <p className="project-desc">{desc}</p>
+
+                    {/* two columns */}
+                    <div className="project-two-col">
+                      <div className="project-col">
+                        <h3>What Was Built</h3>
+                        <ul>
+                          {deliverables.map(d => (
+                            <li key={d}><Icon name="check" size={13} />{d}</li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div className="project-col project-col-results">
+                        <h3>Outcome</h3>
+                        <ul>
+                          {results.map(r => (
+                            <li key={r}><Icon name="chart" size={13} />{r}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+
+                    {/* footer */}
+                    <div className="project-item-footer">
+                      <div className="project-related-row">
+                        <span className="project-related-label">Related:</span>
+                        {relatedSolutions.map(rs => (
+                          <Link key={rs.to} to={rs.to} className="project-related-link">
+                            {rs.label}
+                          </Link>
+                        ))}
+                      </div>
+                      <Link to="/contact" className="btn btn-primary project-cta-btn">
+                        Build Something Similar
+                      </Link>
+                    </div>
                   </div>
                 </motion.article>
               ))}

@@ -18,10 +18,10 @@ import { heroStagger, heroItem, staggerContainer, staggerItem, cardHover } from 
 import './Home.css'
 
 const stats = [
-  { value: '120+', label: 'Projects Delivered', icon: 'building' },
+  { value: '5', label: 'Projects Delivered', icon: 'building' },
   { value: '4M+', label: 'Automated Tasks / Month', icon: 'automation' },
   { value: '99.9%', label: 'Platform Uptime SLA', icon: 'shield' },
-  { value: '18+', label: 'Countries Served', icon: 'globe' },
+  { value: '3', label: 'Countries Served', icon: 'globe' },
 ]
 
 const solutions = [
@@ -477,11 +477,11 @@ export default function Home() {
               </MagneticButton>
             </div>
             <div className="cta-trust-row">
-              <span><strong>120+</strong> projects delivered</span>
+              <span><strong>5</strong> projects delivered</span>
               <span className="cta-trust-divider" aria-hidden="true" />
               <span><strong>99.9%</strong> uptime SLA</span>
               <span className="cta-trust-divider" aria-hidden="true" />
-              <span><strong>18+</strong> countries</span>
+              <span><strong>3</strong> countries</span>
             </div>
           </Reveal>
         </div>

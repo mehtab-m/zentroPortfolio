@@ -10,76 +10,100 @@ const services = [
   {
     id: 'communication',
     icon: 'phone',
-    eyebrow: 'Solution 01',
+    number: '01',
     title: 'Communication Automation',
-    desc: 'Twilio voice/SMS integrations, omnichannel messaging, and automated customer outreach that scales without scaling your team.',
-    benefits: [
-      'Reduce customer response times dramatically',
-      'Automate reminders, alerts & follow-ups',
-      'Scale communication without adding headcount',
+    tagline: 'Stop sending messages manually.',
+    desc: 'We connect Twilio to your existing systems so reminders, alerts, onboarding sequences, and follow-ups run on their own — across SMS, voice, and WhatsApp.',
+    bullets: [
+      'SMS & WhatsApp automated sequences',
+      'Voice call routing & IVR systems',
+      'Webhook-powered real-time delivery',
     ],
-    stack: ['Twilio API', '.NET Core', 'React.js', 'REST APIs', 'WebSockets'],
-    caseStudies: [
-      { label: 'SMS Automation — Membership Platform', anchor: 'sms-automation' },
-      { label: 'Twilio Communication Platform', anchor: 'twilio-platform' },
+    stack: ['Twilio', '.NET Core', 'React.js', 'WebSockets'],
+    caseLinks: [
+      { label: 'SMS Automation for Membership Platform', to: '/portfolio#sms-automation' },
+      { label: 'Twilio Communication Platform', to: '/portfolio#twilio-platform' },
     ],
   },
   {
     id: 'workflow',
     icon: 'automation',
-    eyebrow: 'Solution 02',
+    number: '02',
     title: 'Workflow Automation',
-    desc: 'n8n and Zapier pipelines that connect your apps and eliminate repetitive manual tasks — set it up once, run forever.',
-    benefits: [
-      'Save hours every week on repetitive tasks',
-      'Reduce human error across data entry',
-      'Keep data consistent across all your tools',
+    tagline: 'Kill the copy-paste work.',
+    desc: 'We build n8n and Zapier pipelines that move data between your tools automatically. CRM updates, spreadsheet syncs, email triggers — set once, runs forever.',
+    bullets: [
+      'n8n & Zapier multi-step pipelines',
+      'Cross-app data sync in real time',
+      'Error handling & retry logic built in',
     ],
-    stack: ['n8n', 'Zapier', 'Webhooks', 'REST APIs', 'JSON', '.NET Core'],
-    caseStudies: [
-      { label: 'n8n Workflow Automation', anchor: 'n8n-automation' },
-      { label: 'SMS Automation — Membership Platform', anchor: 'sms-automation' },
+    stack: ['n8n', 'Zapier', 'Webhooks', 'REST APIs', '.NET Core'],
+    caseLinks: [
+      { label: 'n8n Workflow Automation', to: '/portfolio#n8n-automation' },
+      { label: 'SMS Automation for Membership Platform', to: '/portfolio#sms-automation' },
     ],
   },
   {
     id: 'software',
     icon: 'code',
-    eyebrow: 'Solution 03',
+    number: '03',
     title: 'Custom Software Development',
-    desc: 'Full-stack web applications built from scratch for your exact business needs — no templates, no compromises.',
-    benefits: [
-      'Own your software, no vendor lock-in',
-      'Customize every feature to your workflow',
-      'Scalable architecture built for growth',
+    tagline: 'Built for your workflow, not someone else\'s.',
+    desc: 'Full-stack web applications designed around how your business actually works. You own the code. No vendor lock-in. Built with clean architecture that your team can maintain.',
+    bullets: [
+      'ASP.NET Core + React.js full-stack',
+      'Clean Architecture & SQL Server',
+      'Custom dashboards, portals & tools',
     ],
-    stack: ['ASP.NET Core', 'React.js', 'SQL Server', 'Entity Framework Core', 'Clean Architecture'],
-    caseStudies: [
-      { label: 'Institute Management System', anchor: 'institute-management' },
+    stack: ['ASP.NET Core', 'React.js', 'SQL Server', 'Entity Framework Core'],
+    caseLinks: [
+      { label: 'Institute Management System', to: '/portfolio#institute-management' },
     ],
   },
   {
     id: 'ai',
     icon: 'ai',
-    eyebrow: 'Solution 04',
+    number: '04',
     title: 'AI & Security Systems',
-    desc: 'Intelligent systems for access control, facial recognition, and automated decision-making that replace outdated manual processes.',
-    benefits: [
-      'Replace insecure keys and access cards',
-      'Full audit trail of every access event',
-      'Hands-free, contactless access control',
+    tagline: 'Smart access. Full audit trail.',
+    desc: 'AI-powered systems for physical access control and automated decision-making. Face recognition replaces keys, logs every entry, and alerts on unauthorized access — all in real time.',
+    bullets: [
+      'Real-time face detection & recognition',
+      'IoT door lock & hardware integration',
+      'Full access log with timestamps',
     ],
-    stack: ['Python', 'OpenCV', 'face_recognition', 'IoT Hardware', '.NET Core Backend'],
-    caseStudies: [
-      { label: 'AI Face Recognition Security', anchor: 'face-recognition' },
+    stack: ['Python', 'OpenCV', 'IoT Hardware', '.NET Core'],
+    caseLinks: [
+      { label: 'AI Face Recognition Security', to: '/portfolio#face-recognition' },
     ],
   },
 ]
 
 const process = [
-  { step: '01', title: 'Discovery Call', desc: 'We learn your workflow, identify the bottlenecks, and define exactly what needs to be built.' },
-  { step: '02', title: 'Scope & Proposal', desc: 'You get a clear written scope, timeline, and fixed price — no surprises.' },
-  { step: '03', title: 'Build & Review', desc: 'We build in iterations with regular check-ins so you see progress and stay in control.' },
-  { step: '04', title: 'Launch & Support', desc: 'We deploy, test everything live, and stay available for support and iterations.' },
+  {
+    step: '01',
+    title: 'Discovery Call',
+    desc: 'We learn your workflow and bottlenecks. Free, no commitment.',
+    icon: 'phone',
+  },
+  {
+    step: '02',
+    title: 'Scope & Fixed Quote',
+    desc: 'Clear written scope, timeline, and fixed price. No surprises.',
+    icon: 'shield',
+  },
+  {
+    step: '03',
+    title: 'Build & Review',
+    desc: 'We build in sprints with regular check-ins. You stay in control.',
+    icon: 'automation',
+  },
+  {
+    step: '04',
+    title: 'Launch & Support',
+    desc: 'We go live together and stay available for fixes and iterations.',
+    icon: 'chart',
+  },
 ]
 
 export default function Services() {
@@ -89,123 +113,121 @@ export default function Services() {
       {/* ── Hero ── */}
       <section className="page-hero">
         <div className="container">
-          <motion.span
-            className="section-eyebrow"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
+          <motion.span className="section-eyebrow" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}>
             What We Build
           </motion.span>
-          <motion.h1
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-          >
-            Solutions That Replace Manual Work
+          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
+            Four Things We're Very Good At
           </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.25 }}
-          >
-            Four focused service areas — communication automation, workflow automation,
-            custom software, and AI systems. Each one built to deliver a measurable result.
+          <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
+            Communication automation, workflow automation, custom software, and AI systems.
+            Pick one — or let us figure out which combination solves your problem.
           </motion.p>
+          <motion.div
+            className="hero-service-pills"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+          >
+            {services.map(s => (
+              <a key={s.id} href={`#${s.id}`} className="hero-pill">
+                <Icon name={s.icon} size={14} />
+                {s.title}
+              </a>
+            ))}
+          </motion.div>
         </div>
       </section>
 
       {/* ── Services ── */}
-      <section className="section">
+      <section className="section services-section">
         <div className="container">
-          <div className="services-list">
-            {services.map(({ id, icon, eyebrow, title, desc, benefits, stack, caseStudies }, i) => (
-              <Reveal key={id} delay={i * 60}>
-                <article className="service-row" id={id}>
-                  <div className="service-row-main">
-                    <div className="service-row-head">
-                      <div className="icon-wrap icon-wrap-lg">
-                        <Icon name={icon} size={24} />
-                      </div>
-                      <div>
-                        <span className="section-eyebrow">{eyebrow}</span>
-                        <h2>{title}</h2>
-                      </div>
-                    </div>
-                    <p className="service-desc">{desc}</p>
-
-                    <div className="service-benefits">
-                      {benefits.map(b => (
-                        <div key={b} className="service-benefit">
-                          <Icon name="check" size={15} />
-                          <span>{b}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    <div className="service-stack">
-                      <span className="service-stack-label">Tech Stack</span>
-                      <div className="service-stack-tags">
-                        {stack.map(s => (
-                          <span key={s} className="stack-tag">{s}</span>
-                        ))}
-                      </div>
-                    </div>
+          <motion.div
+            className="services-grid"
+            variants={staggerContainer}
+            initial="hidden"
+            animate="visible"
+          >
+            {services.map(({ id, icon, number, title, tagline, desc, bullets, stack, caseLinks }) => (
+              <motion.article
+                key={id}
+                id={id}
+                className="service-card"
+                variants={staggerItem}
+              >
+                <div className="service-card-top">
+                  <div className="service-icon-wrap">
+                    <Icon name={icon} size={26} />
                   </div>
+                  <span className="service-number">{number}</span>
+                </div>
 
-                  {/* See This in Action */}
-                  <div className="service-row-sidebar">
-                    <div className="service-cta-box">
-                      <p className="service-cta-label">See This in Action</p>
-                      <div className="service-cta-links">
-                        {caseStudies.map(cs => (
-                          <Link
-                            key={cs.anchor}
-                            to={`/portfolio#${cs.anchor}`}
-                            className="service-case-link"
-                          >
-                            <Icon name="arrow" size={14} />
-                            {cs.label}
-                          </Link>
-                        ))}
-                      </div>
-                      <Link to="/contact" className="btn btn-primary service-cta-btn">
-                        Get a Quote
+                <div className="service-card-content">
+                  <h2>{title}</h2>
+                  <p className="service-tagline">{tagline}</p>
+                  <p className="service-desc">{desc}</p>
+
+                  <ul className="service-bullets">
+                    {bullets.map(b => (
+                      <li key={b}>
+                        <Icon name="check" size={14} />
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="service-stack">
+                    {stack.map(s => <span key={s} className="stack-chip">{s}</span>)}
+                  </div>
+                </div>
+
+                <div className="service-card-footer">
+                  <div className="service-case-links">
+                    <span className="service-case-label">Live examples →</span>
+                    {caseLinks.map(cl => (
+                      <Link key={cl.to} to={cl.to} className="service-case-link">
+                        {cl.label}
                       </Link>
-                    </div>
+                    ))}
                   </div>
-                </article>
-              </Reveal>
+                  <Link to="/contact" className="btn btn-primary service-cta-btn">
+                    Get a Quote
+                  </Link>
+                </div>
+              </motion.article>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* ── Process ── */}
-      <section className="section section-alt process-section">
+      <section className="section section-alt">
         <div className="container">
           <Reveal>
             <div className="section-header center">
               <span className="section-eyebrow">How It Works</span>
               <h2>From first call to live system</h2>
-              <p>A simple four-step process. No jargon, no surprises.</p>
+              <p>Four steps. Fixed price. No surprises.</p>
             </div>
           </Reveal>
           <motion.div
-            className="process-steps"
+            className="process-grid"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
           >
-            {process.map(({ step, title, desc }, i) => (
-              <motion.div
-                key={step}
-                className="process-step"
-                variants={staggerItem}
-              >
-                <span className="step-number">{step}</span>
+            {process.map(({ step, title, desc, icon }, i) => (
+              <motion.div key={step} className="process-card" variants={staggerItem}>
+                <div className="process-step-num">{step}</div>
+                <div className="process-icon">
+                  <Icon name={icon} size={20} />
+                </div>
                 <h3>{title}</h3>
                 <p>{desc}</p>
+                {i < process.length - 1 && (
+                  <div className="process-connector" aria-hidden="true" />
+                )}
               </motion.div>
             ))}
           </motion.div>
@@ -220,7 +242,7 @@ export default function Services() {
             <p>Tell us what you're trying to automate or build. We'll tell you exactly how we'd approach it.</p>
             <div className="cta-actions">
               <MagneticButton>
-                <Link to="/contact" className="btn btn-primary btn-lg">Book a Free Discovery Call</Link>
+                <Link to="/contact" className="btn btn-primary btn-lg">Book a Free Call</Link>
               </MagneticButton>
               <MagneticButton strength={0.25}>
                 <Link to="/portfolio" className="btn btn-outline btn-lg">See Case Studies</Link>

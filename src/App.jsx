@@ -4,6 +4,7 @@ import Footer from './components/Footer'
 import ScrollProgress from './components/ScrollProgress'
 import BackToTop from './components/BackToTop'
 import PageTransition from './components/PageTransition'
+import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
 import Services from './pages/Services'
 import Portfolio from './pages/Portfolio'
@@ -14,6 +15,7 @@ import './App.css'
 export default function App() {
   return (
     <div className="app-shell">
+      <ScrollToTop />
       <ScrollProgress />
       <div className="grain-overlay" aria-hidden="true" />
       <Navbar />
