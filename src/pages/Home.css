@@ -457,9 +457,9 @@
 .stat-glass {
   text-align: center;
   padding: 36px 24px;
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--surface-elevated);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--border);
   border-radius: 20px;
   box-shadow: var(--shadow-md);
   position: relative;
@@ -470,7 +470,11 @@
 
 .stat-glass:hover {
   box-shadow: 0 16px 48px rgba(0, 120, 212, 0.15);
-  border-color: rgba(0, 120, 212, 0.25);
+  border-color: var(--border-strong);
+}
+
+[data-theme="dark"] .stat-glass:hover {
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
 }
 
 .stat-icon-wrap {
