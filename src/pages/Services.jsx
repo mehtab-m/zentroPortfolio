@@ -13,7 +13,7 @@ const services = [
     number: '01',
     title: 'Communication Automation',
     tagline: 'Stop sending messages manually.',
-    desc: 'We connect Twilio to your existing systems so reminders, alerts, onboarding sequences, and follow-ups run on their own — across SMS, voice, and WhatsApp.',
+    desc: 'We connect Twilio to your existing systems so reminders, alerts, onboarding sequences, and follow-ups run on their own  across SMS, voice, and WhatsApp.',
     bullets: [
       'SMS & WhatsApp automated sequences',
       'Voice call routing & IVR systems',
@@ -31,7 +31,7 @@ const services = [
     number: '02',
     title: 'Workflow Automation',
     tagline: 'Kill the copy-paste work.',
-    desc: 'We build n8n and Zapier pipelines that move data between your tools automatically. CRM updates, spreadsheet syncs, email triggers — set once, runs forever.',
+    desc: 'We build n8n and Zapier pipelines that move data between your tools automatically. CRM updates, spreadsheet syncs, email triggers  set once, runs forever.',
     bullets: [
       'n8n & Zapier multi-step pipelines',
       'Cross-app data sync in real time',
@@ -66,7 +66,7 @@ const services = [
     number: '04',
     title: 'AI & Security Systems',
     tagline: 'Smart access. Full audit trail.',
-    desc: 'AI-powered systems for physical access control and automated decision-making. Face recognition replaces keys, logs every entry, and alerts on unauthorized access — all in real time.',
+    desc: 'AI-powered systems for physical access control and automated decision-making. Face recognition replaces keys, logs every entry, and alerts on unauthorized access  all in real time.',
     bullets: [
       'Real-time face detection & recognition',
       'IoT door lock & hardware integration',
@@ -114,14 +114,14 @@ export default function Services() {
       <section className="page-hero">
         <div className="container">
           <motion.span className="section-eyebrow" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}>
-            What We Build
+         
           </motion.span>
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
-            Four Things We're Very Good At
+           What We Automate and Build
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
             Communication automation, workflow automation, custom software, and AI systems.
-            Pick one — or let us figure out which combination solves your problem.
+            Pick one  or let us figure out which combination solves your problem.
           </motion.p>
           <motion.div
             className="hero-service-pills"

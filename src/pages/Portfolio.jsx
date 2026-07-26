@@ -17,7 +17,7 @@ const projects = [
     client: 'Membership SaaS',
     duration: 'Ongoing',
     tagline: 'Zero manual follow-ups. Fully automated.',
-    desc: 'Automated SMS onboarding, payment reminders, and win-back campaigns for a membership platform — all triggered by real events, running without anyone touching a dashboard.',
+    desc: 'Automated SMS onboarding, payment reminders, and win-back campaigns for a membership platform  all triggered by real events, running without anyone touching a dashboard.',
     stack: ['Systeme.io', 'Zapier', 'Twilio', '.NET Core'],
     deliverables: [
       'Welcome & onboarding SMS sequence',
@@ -93,7 +93,7 @@ const projects = [
     client: 'Education Institute',
     duration: '10 weeks',
     tagline: 'Four spreadsheets replaced by one system.',
-    desc: 'A full-stack institute management system with Clean Architecture. Handles student enrollment, attendance, fee collection, and timetable scheduling — replacing spreadsheets and paper completely.',
+    desc: 'A full-stack institute management system with Clean Architecture. Handles student enrollment, attendance, fee collection, and timetable scheduling  replacing spreadsheets and paper completely.',
     stack: ['ASP.NET Core', 'React.js', 'SQL Server', 'Entity Framework Core'],
     deliverables: [
       'Student enrollment & profile management',
@@ -181,15 +181,14 @@ export default function Portfolio() {
         <div className="container">
           <motion.span className="section-eyebrow"
             initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
-            Case Studies
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.4 }}>
-            5 Real Projects. Real Outcomes.
+           Proven across multiple deployments.
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.4 }}>
-            Communication systems, automation pipelines, custom software, and AI —
+            Communication systems, automation pipelines, custom software, and AI 
             each one built, delivered, and documented.
           </motion.p>
         </div>

@@ -42,7 +42,6 @@ export default function Contact() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            Contact Us
           </motion.span>
           <h1>
             <TextReveal text="Let's Discuss Your Requirements" as="span" />

@@ -17,10 +17,10 @@ const skills = [
 ]
 
 const values = [
-  { icon: 'chart', title: 'Proven Results, Not Promises', desc: '120+ projects shipped across healthcare, legal, SaaS, e-commerce, and logistics — each with documented outcomes tied to real business metrics.' },
-  { icon: 'users', title: 'Small Team, Senior Execution', desc: 'No juniors, no outsourcing. You work directly with the specialists building your system — not account managers passing notes.' },
+  { icon: 'chart', title: 'Proven Results, Not Promises', desc: '120+ projects shipped across healthcare, legal, SaaS, e-commerce, and logistics  each with documented outcomes tied to real business metrics.' },
+  { icon: 'users', title: 'Small Team, Senior Execution', desc: 'No juniors, no outsourcing. You work directly with the specialists building your system  not account managers passing notes.' },
   { icon: 'globe', title: 'Built to Scale With You', desc: 'Architecture decisions made on day one account for where you are going, not just where you are. Systems built to grow without rebuilding.' },
-  { icon: 'shield', title: 'Security & Compliance First', desc: 'HIPAA-aligned workflows, encrypted data pipelines, and audit-ready documentation — shipped as a standard, not an add-on.' },
+  { icon: 'shield', title: 'Security & Compliance First', desc: 'HIPAA-aligned workflows, encrypted data pipelines, and audit-ready documentation  shipped as a standard, not an add-on.' },
 ]
 
 export default function About() {
@@ -61,14 +61,14 @@ export default function About() {
               that should run automatically.
             </p>
             <p>
-              We're a lean team of builders — developers, automation architects, and
-              AI specialists — who partner directly with startups and scale-ups to
+              We're a lean team of builders  developers, automation architects, and
+              AI specialists  who partner directly with startups and scale-ups to
               replace that friction with systems that actually work. No large agency
               overhead. No juniors. Just senior people who care about outcomes.
             </p>
             <p>
               From HIPAA-compliant patient communication to AI lead qualification engines
-              and Stripe-powered funnels generating millions — our work shows up in the
+              and Stripe-powered funnels generating millions  our work shows up in the
               metrics, not just the deliverables.
             </p>
             <MagneticButton>
