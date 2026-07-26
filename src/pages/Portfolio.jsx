@@ -143,7 +143,7 @@ const statusConfig = {
   delivered: { label: 'Delivered',        color: '#0078d4' },
 }
 
-function VideoPlayer({ projectId }) {
+function VideoPlayer({ projectId, autoplay = false, muted = false, playsInline = true }) {
   const url = projectVideos[projectId]
   if (!url) return (
     <div className="project-video-placeholder">
@@ -157,7 +157,10 @@ function VideoPlayer({ projectId }) {
       src={url}
       controls
       preload="metadata"
-      playsInline
+      autoPlay={autoplay}
+      muted={muted}
+      playsInline={playsInline}
+      loop={autoplay}
       aria-label="Project demo video"
     />
   )
@@ -237,7 +240,8 @@ export default function Portfolio() {
                 >
                   {/* Left: video */}
                   <div className="project-item-media">
-                    <VideoPlayer projectId={id} />
+                   <VideoPlayer projectId={id} autoplay={true} muted={true} playsInline={true} />
+
                     <div className="project-item-badges">
                       <span
                         className="project-status-badge"

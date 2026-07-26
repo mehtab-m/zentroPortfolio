@@ -1,99 +1,72 @@
-import { useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Icon } from './Icons'
-import { getLogoUrl } from '../data/logos'
+import { staggerContainer, staggerItem } from '../lib/motion'
 import './BentoShowcase.css'
 
-const bentoItems = [
+const features = [
   {
-    size: 'large',
-    eyebrow: 'Automation',
-    title: 'Workflows that run themselves',
-    desc: 'Multi-step pipelines connecting CRM, e-commerce, and communication — zero manual handoffs.',
     icon: 'automation',
-    slug: 'zapier',
-    to: '/services',
+    label: 'Workflow Automation',
+    desc: 'n8n & Zapier pipelines that connect your tools and eliminate manual work.',
+    to: '/services#workflow',
   },
   {
-    size: 'medium',
-    eyebrow: 'Voice & SMS',
-    title: 'Global reach',
-    desc: 'Twilio-powered messaging across 180+ countries.',
     icon: 'phone',
-    slug: 'twilio',
-    to: '/services',
+    label: 'Communication',
+    desc: 'Twilio SMS, voice & WhatsApp — automated and running without you.',
+    to: '/services#communication',
   },
   {
-    size: 'medium',
-    eyebrow: 'AI Agents',
-    title: 'Always-on intelligence',
-    desc: 'LLM agents that qualify, support, and decide at scale.',
     icon: 'ai',
-    slug: 'openai',
-    to: '/services',
+    label: 'AI Systems',
+    desc: 'Face recognition, intelligent agents, and automated decision-making.',
+    to: '/services#ai',
   },
   {
-    size: 'wide',
-    eyebrow: 'Cloud Native',
-    title: 'Built for enterprise scale',
-    desc: 'Multi-region deployment on Azure & Google Cloud with 99.9% uptime SLA and elastic scaling.',
-    icon: 'globe',
-    slug: 'microsoft-azure',
-    to: '/about',
+    icon: 'code',
+    label: 'Custom Software',
+    desc: 'Full-stack apps built for your exact workflow. You own the code.',
+    to: '/services#software',
   },
 ]
 
 export default function BentoShowcase() {
-  const ref = useRef(null)
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] })
-  const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '20%'])
-
   return (
-    <section className="bento-section section" ref={ref}>
-      <motion.div className="bento-bg" style={{ y: bgY }} aria-hidden="true" />
-
+    <section className="bento-section">
       <div className="container">
-        <motion.div
-          className="section-header center"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.7 }}
-        >
-          <span className="section-eyebrow">Platform Highlights</span>
-          <h2>Everything you need, one partner</h2>
-          <p>A modular architecture spanning automation, communication, AI, and cloud — unified under one roof.</p>
-        </motion.div>
+        <div className="bento-header">
+          <div>
+            <span className="section-eyebrow">What We Do</span>
+            <h2 className="bento-title">Four things, done well</h2>
+          </div>
+          <Link to="/services" className="bento-see-all">
+            See all solutions <Icon name="arrow" size={14} />
+          </Link>
+        </div>
 
-        <div className="bento-grid">
-          {bentoItems.map((item, i) => (
-            <motion.div
-              key={item.title}
-              className={`bento-card bento-${item.size}`}
-              initial={{ opacity: 0, y: 48 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ delay: i * 0.08, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              whileHover={{ y: -6 }}
-            >
-              <Link to={item.to} className="bento-card-link">
-                <div className="bento-card-glow" aria-hidden="true" />
-                <div className="bento-card-top">
-                  <span className="bento-eyebrow">{item.eyebrow}</span>
-                  <div className="bento-icon-wrap">
-                    <Icon name={item.icon} size={26} />
-                  </div>
+        <motion.div
+          className="bento-strip"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          {features.map(({ icon, label, desc, to }) => (
+            <motion.div key={label} variants={staggerItem}>
+              <Link to={to} className="bento-feature" aria-label={label}>
+                <div className="bento-feature-icon">
+                  <Icon name={icon} size={22} />
                 </div>
-                <h3>{item.title}</h3>
-                <p>{item.desc}</p>
-                <div className="bento-logo">
-                  <img src={getLogoUrl(item.slug)} alt="" loading="lazy" />
+                <div className="bento-feature-text">
+                  <strong>{label}</strong>
+                  <span>{desc}</span>
                 </div>
+                <Icon name="arrow" size={14} className="bento-feature-arrow" />
               </Link>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   )
