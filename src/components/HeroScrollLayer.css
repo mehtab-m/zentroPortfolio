@@ -11,3 +11,12 @@
   position: relative;
   z-index: 2;
 }
+
+@media (max-width: 768px) {
+  .hero-scroll-content {
+    will-change: auto;
+    transform: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+  }
+}

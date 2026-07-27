@@ -937,6 +937,21 @@
 
   .stats-grid {
     grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .stat-glass {
+    padding: 24px 16px;
+    border-radius: 16px;
+  }
+
+  .stat-item strong {
+    font-size: 30px;
+  }
+
+  .stat-icon-wrap {
+    width: 44px;
+    height: 44px;
   }
 
   .capabilities-grid {
@@ -949,10 +964,14 @@
   }
 
   .testimonial-card {
-    flex: 0 0 280px;
+    flex: 0 0 300px;
   }
 
   .testimonials-section {
+    padding: 48px 0;
+  }
+
+  .stats-section {
     padding: 48px 0;
   }
 }
@@ -960,7 +979,7 @@
 @media (max-width: 640px) {
   .stats-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
+    gap: 10px;
   }
 
   .stat-glass {
@@ -968,12 +987,17 @@
   }
 
   .stat-item strong {
-    font-size: 28px;
+    font-size: 26px;
   }
 
   .stat-icon-wrap {
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  .stat-item span {
+    font-size: 12px;
   }
 
   .capabilities-grid {
@@ -981,7 +1005,7 @@
   }
 
   .testimonial-card {
-    flex: 0 0 260px;
+    flex: 0 0 280px;
     padding: 18px;
   }
 }
@@ -989,6 +1013,14 @@
 @media (max-width: 480px) {
   .stats-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-panel-body {
+    padding: 16px;
+  }
+
+  .panel-chart {
+    height: 72px;
   }
 }
 

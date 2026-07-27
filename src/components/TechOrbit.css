@@ -158,7 +158,11 @@
 @media (max-width: 900px) {
   .tech-orbit-layout {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 40px;
+  }
+
+  .tech-orbit-stage {
+    max-width: 420px;
   }
 
   .tech-orbit-ring-1 { width: 320px; height: 320px; right: 50%; transform: translate(50%, -50%); }
@@ -167,12 +171,30 @@
 
 @media (max-width: 768px) {
   .tech-orbit-section {
-    padding: 72px 0;
+    padding: 56px 0;
+  }
+
+  .tech-orbit-stage {
+    max-width: 340px;
   }
 
   .tech-orbit-node-inner .brand-logo-pill {
-    padding: 12px 20px;
-    --logo-height: 44px;
+    padding: 10px 16px;
+    --logo-height: 36px;
+  }
+
+  .tech-orbit-copy p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 540px) {
+  .tech-orbit-stage {
+    display: none;
+  }
+
+  .tech-orbit-layout {
+    gap: 0;
   }
 }
 

@@ -630,5 +630,17 @@ a:hover {
   .cta-trust-row {
     font-size: 13px;
     gap: 12px;
+    flex-direction: column;
+    align-items: center;
   }
+
+  .cta-trust-divider {
+    display: none;
+  }
+}
+
+/* prevent horizontal scroll on mobile globally */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
 }

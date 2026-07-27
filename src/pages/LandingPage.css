@@ -1,0 +1,13 @@
+.landing-page {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Smooth scroll offset for sticky navbar */
+html {
+  scroll-behavior: smooth;
+}
+
+[id] {
+  scroll-margin-top: calc(var(--nav-height) + 12px);
+}

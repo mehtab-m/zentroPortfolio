@@ -149,20 +149,55 @@
   color: var(--text);
 }
 
+/* Mobile variant — never 320vh, never sticky */
+.horizontal-scroll-mobile {
+  height: auto !important;
+}
+
+.horizontal-scroll-mobile .horizontal-scroll-sticky {
+  position: relative !important;
+  height: auto !important;
+  padding: 48px 0 8px !important;
+  overflow: visible !important;
+}
+
+/* Swipe hint — mobile only */
+.horizontal-scroll-swipe-hint {
+  display: none;
+}
+
 @media (max-width: 768px) {
+  /* Section no longer needs 320vh — collapses to content height */
   .horizontal-scroll-section {
     height: auto;
+    overflow: hidden;
   }
 
+  /* Unstick and let it flow normally */
   .horizontal-scroll-sticky {
     position: relative;
     height: auto;
-    padding: 56px 0;
+    padding: 48px 0 8px;
+    overflow: visible;
   }
 
+  .horizontal-scroll-header {
+    margin-bottom: 24px;
+  }
+
+  .horizontal-scroll-header h2 {
+    font-size: clamp(20px, 6vw, 30px);
+  }
+
+  .horizontal-scroll-progress {
+    display: none;
+  }
+
+  /* Scrollable row */
   .horizontal-scroll-track-wrap {
-    padding-left: 20px;
+    padding-left: 16px;
     overflow-x: auto;
+    overflow-y: visible;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
@@ -172,13 +207,51 @@
     display: none;
   }
 
+  /* Track: horizontal flex row, no framer transform */
   .horizontal-scroll-track {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 12px;
+    padding-right: 16px;
+    width: max-content;
+    /* neutralise any leftover inline transform from framer */
     transform: none !important;
-    padding-right: 20px;
   }
 
+  /* Each card: fixed width so ~1.15 cards peek on screen */
   .horizontal-scroll-card {
     scroll-snap-align: start;
+    flex: 0 0 78vw;
+    max-width: 300px;
+    padding: 22px 18px;
+    border-radius: 18px;
+  }
+
+  .horizontal-scroll-card strong {
+    font-size: 34px;
+  }
+
+  .horizontal-scroll-card h3 {
+    font-size: 16px;
+  }
+
+  .horizontal-scroll-card p {
+    font-size: 13.5px;
+  }
+
+  /* Show swipe hint */
+  .horizontal-scroll-swipe-hint {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 16px 24px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--text-muted);
+    position: relative;
+    z-index: 1;
   }
 }
 
@@ -191,6 +264,7 @@
     position: relative;
     height: auto;
     padding: 56px 0;
+    overflow: visible;
   }
 
   .horizontal-scroll-track {
